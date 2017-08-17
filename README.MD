@@ -1,4 +1,4 @@
 # Work-In-Progress
 
-This is a repo for my website!
+This is a repository for my website!
 
