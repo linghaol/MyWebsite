@@ -10,7 +10,7 @@
 	<div class="top">
 		<a href="https://github.com/linghaol/webapp"><img style="position: absolute; top: 0; right: 0; border: 0" src="../static/image/forkme.png" alt="Fork me on GitHub"></a>
 		<div class="top-content">
-			<a class="website-name" href="./blogpage">website name</a>
+			<a class="website-name" href="/">website name</a>
 			<span class="stick">|</span>
 			<span class="website-intro">website introduction</span>
 		</div>
@@ -25,13 +25,27 @@
 	<div class="main-body">
 		<article class="entry">  
 	    	<header>
-	        	<h2>Title of article</h2> 
-	        	<p><time pubdate datetime="2009-10-09T14:28-08:00"></time></p>
+    		{% if name %}
+	        	<h3>{{ name }}</h3>
+        	{% else %}
+	        	<h3>Default Title</h3>
+        	{% endif %}
+	        	<p class="line"></p>
 	    	</header>
-	    	<p>This is article introduction</p>
+	    	<p>This is article1 introduction</p>
 	    	<footer>
 	        	<p>Can be something else</p>
 	    	</footer>
+		</article>
+		<article class="entry">
+			<header>
+				<h3>Title of article 2</h3>
+				<p class="line"></p>
+			</header>
+			<p>This is article2 introduction</p>
+			<footer>
+				<p>Can be something else</p>
+			</footer>
 		</article>
 	</div>
 </body>
