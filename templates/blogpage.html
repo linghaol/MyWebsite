@@ -23,32 +23,19 @@
 		</ul>
 	</nav>
 	<div class="main-body">
+	{% for item in itemList %}
 		<article class="entry">  
 	    	<header>
-    		{% if name %}
-	        	<h3>{{ name }}</h3>
-        	{% else %}
-	        	<h3>Default Title</h3>
-        	{% endif %}
+	        	<h3>{{ item.name }}</h3>
 	        	<p class="line"></p>
 	    	</header>
-	    	<p>
-	    		This is article1 introduction
-	    	</p>	    	
+	    	<p>{{ item.intro }}</p>	    	
 	    	<footer>
-	        	<a href="/blog/<article1 name>"><button class="more-button">more</button></a>
+	        	<a href="/blogpage/{{ item.name }}>"><button class="more-button">more</button></a>
 	    	</footer>
 		</article>
-		<article class="entry">
-			<header>
-				<h3>Title of article 2</h3>
-				<p class="line"></p>
-			</header>
-			<p>This is article2 introduction</p>
-			<footer>
-				<a href="/blog/<article1 name>"><button class="more-button">more</button></a>
-			</footer>
-		</article>
+	{% endfor %}
 	</div>
+	<div class="bottom"></div>
 </body>
 </html>

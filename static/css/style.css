@@ -14,9 +14,9 @@ pre {white-space: pre;
 	 padding: 10px;}
 
 
+
 /* top area */
-.top {background-color: ;
-	  margin: -10px -8px 0px;
+.top {margin: -10px -8px 0px;
 	  height: 200px;}
 
 .top-content {position: absolute; 
@@ -103,12 +103,20 @@ h3 {font-size: 35px;
 
 
 
+/* bottom */
+.bottom {background-color: white;
+		 height: 200px;
+		 margin-top: 50px;}
+
+
+
+
 /* Work-in-progress setting */
 .work-in-progress-title {text-align: center;
-						 margin-top: 150px;
+						 margin: 100px 0px;
 						 font-size: 50px;}
 
-.work-in-progress-picture {}
+.not-found {display: block; margin: auto;}
 
 
 
