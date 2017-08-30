@@ -11,19 +11,25 @@ app = Flask(__name__)
 
 # index
 @app.route('/')
-def index():
+def index(itemList=None):
 	# connect to DB and record visitor ip, time
-	db_client = MongoClient(host='mymongo', port=27017) # username=USERNAME, password=KEY
+	db_client = MongoClient(host='mymongo', port=27017)
 	db = db_client['mywebsite']['visitor']
 	db.insert_one({'visitor ip':request.headers.get('X-Forwarded-For', request.remote_addr),
 				   'date':datetime.now().strftime('%Y-%m-%d %H:%M:%S')})
+	db = db_client['mywebsite']['blog']
+	blogs = db.find()
 	db_client.close()
-	return render_template('blogpage.html')
+	return render_template('blogpage.html', itemList=blogs)
 
 # blog page
 @app.route('/blogpage')
-def blogpage():
-	return render_template('blogpage.html')
+def blogpage(itemList=None):
+	db_client = MongoClient(host='mymongo', port=27017)
+	db = db_client['mywebsite']['blog']
+	blogs = db.find()
+	db_client.close()
+	return render_template('blogpage.html', itemList=blogs)
 
 # stats
 @app.route('/stats')
