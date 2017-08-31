@@ -76,8 +76,8 @@ article {width: 80%;
 		 border-color: green;}
 
 .entry {transition: 150ms ease-in-out;
-		animation: blogappear 2.5s;
-		-webkit-animation: blogappear 2.5s;}
+		animation: blogappear 1.5s;
+		-webkit-animation: blogappear 1.5s;}
 
 .entry:hover {transform: scale(1.05);
 			  -webkit-transform: scale(1.05);
