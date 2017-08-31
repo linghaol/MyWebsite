@@ -1,9 +1,11 @@
 /* This css file is only used to define style for general elements in all templetes*/
 
+
 /* link */
 a {text-decoration: none; 
    text-transform: uppercase;
    color: black;}
+
 
 /* pre */
 pre {white-space: pre;
@@ -12,6 +14,7 @@ pre {white-space: pre;
 	 border-radius: 5px;
 	 color: #ffff28;
 	 padding: 10px;}
+
 
 /* top area */
 .top {margin: -10px -8px 0px;
@@ -32,6 +35,7 @@ pre {white-space: pre;
 .website-intro {font-family: "Comic Sans MS", cursive, sans-serif;
 				font-size: 35px; 
 				margin-left: 30px;}
+
 
 /* navigation */
 .main-nav {background-color: #8a8a8a;
@@ -57,19 +61,21 @@ pre {white-space: pre;
 				   border-style:0px solid; 
 				   border-radius: 8px;}
 
+
 /* main body for article entry */
 .main-body {width: 70%;
 			margin: auto; 
 			padding: 0px 30px;}
 
-.entry {width: 80%; 
-		margin: 60px auto; 
-		padding: 15px 30px; 
-		border-style: outset; 
-		border-width: 5px 0px 5px 0px; 
-		border-radius: 15px; 
-		border-color: green;
-		transition: 150ms ease-in-out;
+article {width: 80%; 
+		 margin: 60px auto; 
+		 padding: 15px 30px; 
+		 border-style: outset; 
+		 border-width: 5px 0px 5px 0px; 
+		 border-radius: 15px; 
+		 border-color: green;}
+
+.entry {transition: 150ms ease-in-out;
 		animation: blogappear 2.5s;
 		-webkit-animation: blogappear 2.5s;}
 
@@ -96,20 +102,20 @@ footer {height: 35px;
 
 .more-button:hover {background-color: rgba(7, 107, 0, 0.75)}
 
+
 /* text in article */
-h3 {font-size: 35px;
-	margin: 20px 0px 10px 0px;}
+h1 {font-size: 35px;
+    margin: 20px 0px 10px 0px;}
 
 .line {border-top: 3.5px solid;
 	   border-color: green;
 	   border-radius: 5px;}
 
+
 /* bottom */
 .bottom {background-color: white;
 		 height: 200px;
 		 margin-top: 50px;}
-
-
 
 
 /* Work-in-progress setting */

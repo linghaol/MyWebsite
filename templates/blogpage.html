@@ -3,14 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-	<title>Blog Page</title>
+	<title>Blogpage</title>
 	<link rel="stylesheet" type="text/css" href="../static/css/style.css">	
 </head>
 <body>
 	<div class="top">
-		<a href="https://github.com/linghaol/webapp"><img style="position: absolute; top: 0; right: 0; border: 0" src="../static/image/forkme.png" alt="Fork me on GitHub"></a>
+		<a href="https://github.com/linghaol/MyWebsite"><img style="position: absolute; top: 0; right: 0; border: 0" src="../static/image/forkme.png" alt="Fork me on GitHub"></a>
 		<div class="top-content">
-			<a class="website-name" href="/">Linghao</a>
+			<a class="website-name" href="/">LINGHAO</a>
 			<span class="stick">|</span>
 			<span class="website-intro">Thinking makes sense.</span>
 		</div>
@@ -26,12 +26,15 @@
 	{% for item in itemList %}
 		<article class="entry">  
 	    	<header>
-	        	<h3>{{ item.name }}</h3>
+	        	<a href="/blogpage/{{ item.title }}"><h1>{{ item.title }}</h1></a>
 	        	<p class="line"></p>
+				<p>Author: {{ item.author }}</p>
+				<p>Time: {{ item.time }}</p>
+				</br>
 	    	</header>
-	    	<p>{{ item.intro }}</p>	    	
+	    	{{ item.intro|safe }}
 	    	<footer>
-	        	<a href="/blogpage/{{ item.name }}>"><button class="more-button">more</button></a>
+	        	<a href="/blogpage/{{ item.title }}"><button class="more-button">more</button></a>
 	    	</footer>
 		</article>
 	{% endfor %}
