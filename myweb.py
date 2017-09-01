@@ -27,7 +27,7 @@ def index(itemList=None):
 def getBlogpage(itemList=None):
 	db_client = MongoClient(host='mymongo', port=27017)
 	db = db_client['mywebsite']['blog']
-	blogs = db.find(projection={'detail': False}).sort('time', DESCENDING)
+	blogs = db.find(projection={'_id':False, 'detail': False}).sort('time', DESCENDING)
 	db_client.close()
 	return render_template('blogpage.html', itemList=blogs)
 
@@ -46,7 +46,7 @@ def getAbout():
 def getArticle(article_title, art=None):
 	db_client = MongoClient(host='mymongo', port=27017)
 	db = db_client['mywebsite']['blog']
-	art = db.find_one()
+	art = db.find_one(filter={'title':article_title}, projection={'_id':False, 'intro':False})
 	db_client.close()
 	return render_template('article.html', article=art)
 
