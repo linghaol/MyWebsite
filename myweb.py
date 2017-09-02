@@ -34,12 +34,12 @@ def getBlogpage(itemList=None):
 # stats
 @app.route('/stats')
 def getStats():
-	return render_template('error.html')
+	return render_template('stats.html')
 
 # about me page
 @app.route('/about')
 def getAbout():
-	return render_template('error.html')
+	return render_template('about.html')
 
 # render article
 @app.route('/blogpage/<article_title>')
@@ -57,7 +57,7 @@ def not_found(error):
 
 if __name__ == "__main__":
 	# bind app to port 5000
-	app.run(host='0.0.0.0', port=5000, debug=True)
+	app.run(host='0.0.0.0', port=5000)
 
 
 
