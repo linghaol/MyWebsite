@@ -5,23 +5,13 @@ from flask import render_template
 from flask import request
 from flask import redirect
 from flask import url_for
-from pymongo import MongoClient
 from datetime import datetime
 import json
 
 app = Flask(__name__)
 
-# index
+# index & blog
 @app.route('/')
-def index():
-	# connect to DB and record visitor ip, time
-	db_client = MongoClient(host='mymongo', port=27017)
-	db = db_client['mywebsite']['visitor']
-	db.insert_one({'visitor ip':request.headers.get('X-Forwarded-For', request.remote_addr), 'date':datetime.now().strftime('%Y-%m-%d %H:%M:%S')})
-	return redirect(url_for('getBlogpage'))
-
-# blog page
-@app.route('/blogpage')
 def getBlogpage(itemList=None):
 	with open('./content/parsed/bloglist', 'r') as f:
 		bloglist = json.loads(f.read())
@@ -38,7 +28,7 @@ def getAbout():
 	return render_template('error.html')
 
 # render article
-@app.route('/blogpage/<article_title>')
+@app.route('/<article_title>')
 def getArticle(article_title, art=None):
 	with open('./content/parsed/'+article_title, 'r') as f:
 		art = json.loads(f.read())

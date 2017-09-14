@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-	<title>Blogpage</title>
+	<title>linghaol</title>
 	<link rel="stylesheet" type="text/css" href="../static/css/style.css">	
 </head>
 <body>
@@ -17,7 +17,7 @@
 	</div>
 	<nav class="main-nav">
 		<ul class="nav-content">
-			<li class="nav-button"><a href="/blogpage">blog</a></li>
+			<li class="nav-button"><a href="/">blog</a></li>
 			<li class="nav-button"><a href="/stats">stats</a></li>
 			<li class="nav-button"><a href="/about">about</a></li>
 		</ul>
@@ -26,7 +26,7 @@
 	{% for item in itemList %}
 		<article class="entry">  
 	    	<header>
-	        	<a href="/blogpage/{{ item.title }}"><h1 class="article-title">{{ item.title }}</h1></a>
+	        	<a href="/{{ item.title }}"><h1 class="article-title">{{ item.title }}</h1></a>
 	        	<p class="line"></p>
 				<p>Author: {{ item.author }}</p>
 				<p>Time: {{ item.time }}</p>
@@ -34,7 +34,7 @@
 	    	</header>
 	    	{{ item.intro|safe }}
 	    	<footer>
-	        	<a href="/blogpage/{{ item.title }}"><button class="more-button">more</button></a>
+	        	<a href="/{{ item.title }}"><button class="more-button">more</button></a>
 	    	</footer>
 		</article>
 	{% endfor %}
