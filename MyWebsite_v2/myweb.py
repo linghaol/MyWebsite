@@ -2,20 +2,15 @@
 
 from flask import Flask
 from flask import render_template
-from flask import request
-from flask import redirect
 from flask import url_for
-from datetime import datetime
-import json
+from flask import json
 
 app = Flask(__name__)
 
 # index & blog
 @app.route('/')
 def getBlogpage(itemList=None):
-	with open('./content/parsed/bloglist', 'r') as f:
-		bloglist = json.loads(f.read())
-	return render_template('blogpage.html', itemList=sorted(bloglist, key=lambda x: datetime.strptime(x['time'], '%Y-%m-%d'), reverse=True))
+	return render_template('blogpage.html', itemList=json.load(open('./content/parsed/bloglist.json')))
 
 # stats
 @app.route('/stats')
@@ -28,11 +23,9 @@ def getAbout():
 	return render_template('error.html')
 
 # render article
-@app.route('/<article_title>')
-def getArticle(article_title, art=None):
-	with open('./content/parsed/'+article_title, 'r') as f:
-		art = json.loads(f.read())
-	return render_template('article.html', article=art)
+@app.route('/blog/<article_title>')
+def getArticle(article_title):
+	return render_template('article.html', article=json.load(open('./content/parsed/'+article_title+'.json')))
 
 # error handle
 @app.errorhandler(404)
