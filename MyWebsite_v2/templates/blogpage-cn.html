@@ -3,38 +3,38 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-	<title>Blogpage</title>
+	<title>博客</title>
 	<link rel="stylesheet" type="text/css" href="../static/css/style.css">	
 </head>
 <body>
 	<div class="top">
 		<a href="https://github.com/linghaol/MyWebsite"><img style="position: absolute; top: 0; right: 0; border: 0" src="../static/image/forkme.png" alt="Fork me on GitHub"></a>
 		<div class="top-content">
-			<a class="website-name" href="/blogpage">LINGHAO</a>
+			<a class="website-name" href="/blogpage-cn">LINGHAO</a>
 			<span class="stick">|</span>
 			<span class="website-intro">Thinking makes sense.</span>
 		</div>
 	</div>
 	<nav class="main-nav">
 		<ul class="nav-content">
-			<li class="nav-button"><a href="/blogpage">blog</a></li>
-			<li class="nav-button"><a href="/stats">stats</a></li>
-			<li class="nav-button"><a href="/about">about</a></li>
+			<li class="nav-button"><a href="/blogpage-cn">博客</a></li>
+			<li class="nav-button"><a href="/stats-cn">统计</a></li>
+			<li class="nav-button"><a href="/about-cn">关于</a></li>
 		</ul>
 	</nav>
 	<div class="main-body">
 	{% for item in itemList %}
 		<article class="entry"> 
 	    	<header>
-	        	<a href="/blog/{{ item.title }}"><h1 class="article-title">{{ item.title }}</h1></a>
+	        	<a href="/blog/{{ item.title }}-cn"><h1 class="article-title">{{ item.title }}</h1></a>
 	        	<p class="line"></p>
-				<p>Author: {{ item.author }}</p>
-				<p>Time: {{ item.time }}</p>
+				<p>作者: {{ item.author }}</p>
+				<p>日期: {{ item.time }}</p>
 				</br>
 	    	</header>
 	    	{{ item.intro|safe }}
 	    	<footer>
-	        	<button class="more-button"><a href="/blog/{{ item.title }}">more</a></button>
+	        	<button class="more-button"><a href="/blog/{{ item.title }}-cn">详细</a></button>
 	    	</footer>
 		</article>
 	{% endfor %}
