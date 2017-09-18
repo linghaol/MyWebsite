@@ -2,53 +2,51 @@
 
 from flask import Flask
 from flask import render_template
-from flask import request
-from flask import redirect
 from flask import url_for
-from pymongo import MongoClient
-from pymongo import DESCENDING
-from datetime import datetime
+from flask import json
 
 app = Flask(__name__)
 
-# index
+# welcome
 @app.route('/')
-def index(itemList=None):
-	# connect to DB and record visitor ip, time
-	db_client = MongoClient(host='mymongo', port=27017)
-	db = db_client['mywebsite']['visitor']
-	db.insert_one({'visitor ip':request.headers.get('X-Forwarded-For', request.remote_addr),
-				   'date':datetime.now().strftime('%Y-%m-%d %H:%M:%S')})
-	db_client.close()
-	return redirect(url_for('getBlogpage'))
+def getWelcome():
+	return render_template('welcome.html')
 
-# blog page
+# blogpage
 @app.route('/blogpage')
 def getBlogpage(itemList=None):
-	db_client = MongoClient(host='mymongo', port=27017)
-	db = db_client['mywebsite']['blog']
-	blogs = db.find(projection={'_id':False, 'detail': False}).sort('time', DESCENDING)
-	db_client.close()
-	return render_template('blogpage.html', itemList=blogs)
+	return render_template('blogpage.html', itemList=json.load(open('./content/parsed/bloglist.json')))
+
+@app.route('/blogpage-cn')
+def getBlogpage_cn(itemList=None):
+	return render_template('blogpage-cn.html', itemList=json.load(open('./content/parsed/bloglist.json')))
 
 # stats
 @app.route('/stats')
 def getStats():
 	return render_template('error.html')
 
+@app.route('/stats-cn')
+def getStats_cn():
+	return render_template('error-cn.html')
+
 # about me page
 @app.route('/about')
 def getAbout():
 	return render_template('error.html')
 
+@app.route('/about-cn')
+def getAbout_cn():
+	return render_template('error-cn.html')
+
 # render article
-@app.route('/blogpage/<article_title>')
-def getArticle(article_title, art=None):
-	db_client = MongoClient(host='mymongo', port=27017)
-	db = db_client['mywebsite']['blog']
-	art = db.find_one(filter={'title':article_title}, projection={'_id':False, 'intro':False})
-	db_client.close()
-	return render_template('article.html', article=art)
+@app.route('/blog/<article_title>')
+def getArticle(article_title):
+	return render_template('article.html', article=json.load(open('./content/parsed/'+article_title+'.json')))
+
+@app.route('/blog/<article_title>-cn')
+def getArticle_cn(article_title):
+	return render_template('article-cn.html', article=json.load(open('./content/parsed/'+article_title+'.json')))
 
 # error handle
 @app.errorhandler(404)
