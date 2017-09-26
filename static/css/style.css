@@ -291,7 +291,56 @@ footer {
 }
 
 
+/*  service page  */
+.instruction {
+	width: 70%;
+	margin: 20px auto;
+	background-color: #ecc06e;
+	padding: 10px 30px;
+	border-radius: 10px;
+}
+
+.instruction>ul>li {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.input-area {
+	width: 70%;
+	margin: 30px auto;
+	background-color: #d4d3d2;
+	padding: 20px 30px;
+	border-radius: 10px;	
+}
+
+.input-area>p {
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+
+#input-line  {
+	margin-bottom: 30px;
+	font-size: 25px;
+	padding: 3px;
+}
+
+.submit-button {
+ 	margin-top: 30px;
+	font-size: 20px;
+	padding: 3px 10px;
+}
+
+.password-area {
+	width: 70%;
+	margin: 30px auto;
+	padding: 1px 30px;
+	border-radius: 10px;
+	background-color: #292926;
+	text-align: center;
+}
 
 
-
+.password-area>p {
+	font-size: 25px;
+}
 
