@@ -17,12 +17,9 @@ if __name__ == '__main__':
 			parser = blogparser()
 			blog = parser.parse('./content/markdown/'+article+'.md')
 			listitem = dict((i, blog[i]) for i in ['title', 'time', 'author', 'intro'])
-			if 'bloglist' not in parsedlist:
-				json.dump([listitem], open('./content/parsed/bloglist.json', 'w'))
-			else:
-				bloglist = json.load(open('./content/parsed/bloglist.json', 'r'))
-				bloglist.append(listitem)
-				json.dump(sorted(bloglist, key=lambda x: datetime.strptime(x['time'], '%Y-%m-%d'), reverse=True), 
+			bloglist = json.load(open('./content/parsed/bloglist.json', 'r'))
+			bloglist.append(listitem)
+			json.dump(sorted(bloglist, key=lambda x: datetime.strptime(x['time'], '%Y-%m-%d'), reverse=True), 
 					      open('./content/parsed/bloglist.json', 'w'))
 			json.dump(blog, open('./content/parsed/'+article+'.json', 'w'))
 			parsedlist = [psname.split('.')[0] for psname in os.listdir('./content/parsed')]
