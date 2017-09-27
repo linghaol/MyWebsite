@@ -1,6 +1,20 @@
+@font-face {
+    font-family: headfont;
+    src: url("../fonts/Gloria_Hallelujah/GloriaHallelujah.ttf");
+}
+
+@font-face {
+    font-family: titlefont;
+    src: url("../fonts/Droid_Serif/DroidSerif-Regular.ttf");
+}
+
+@font-face {
+    font-family: articlefont;
+    src: url("../fonts/Montserrat/Montserrat-Light.ttf");
+}
 
 body {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: articlefont, sans-serif;
 }
 
 a {
@@ -10,13 +24,10 @@ a {
 }
 
 h1 {
-	font-size: 40px;
+	font-family: titlefont, serif;
 	margin: 20px 0px 10px 0px;
 }
 
-h2 {
-	font-size: 30px;
-}
 
 p {
 	font-size: 20px;
@@ -110,7 +121,7 @@ pre {
 
 /* top area */
 .top {
-	margin: -10px -8px 0px;
+	margin: 0px -8px 10px;
 	height: 200px;
 }
 
@@ -121,6 +132,7 @@ pre {
 }
 
 .website-name {
+	font-family: headfont, cursive;
 	font-size: 80px;
 	margin-right: 30px;}
 .website-name:hover {
@@ -128,12 +140,14 @@ pre {
 }
 
 .stick {
+	font-family: titlefont, serif;
 	font-size: 70px; 
 	position: relative;
 	bottom: 5px;
 }
 
 .website-intro {
+	font-family: headfont, cursive;
 	font-size: 35px; 
 	margin-left: 30px;
 }
@@ -195,7 +209,7 @@ article {
 	border-color: #3d903d;
 	transition: 150ms ease-in;
 	animation:blogappear 1s;
-	animation-timing-function:cubic-bezier(0.19, 0.74, 0.48, 1.42);
+	animation-timing-function:cubic-bezier(0.19, 0.74, 0.21, 1.23);
 }
 
 article:hover {

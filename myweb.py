@@ -78,7 +78,7 @@ def getArticle_cn(article_title):
 		article=json.load(open('./content/parsed/'+article_title+'.json')))
 
 if __name__ == "__main__":
-	# bind app to port 5000
+	# bind app to port 8000
 	app.run(host='0.0.0.0', port=8000)
 
 

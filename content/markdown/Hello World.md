@@ -1,40 +1,32 @@
 
 title=Hello World
-time=2017-9-10
-author=Linghao
-
-
-
-//////
-
-
-
-Hi!</br>
-I'm Linghao, this is my first post! The website is designed, organized and managed by myself.</br>
-</br>
-Hope you enjoy it!</br>
-</br>
-If you like it, don't forget to hit the "thumb"!</br>
-You ask where the button is?</br>
-Aha, it is on the way, guys.</br>
-Maybe late, but never absent!
-
+time=2017-9-27
+author=Linghaol
 
 
 //////
 
 
+### Hi!
 
-## Welcome to my blog
+I'm Linghaol, this is my first post, and always "Hello World"!<br>
+The website is designed, organized and managed by myself. In the first post, I will briefly introduce this site to you, write something about intentions and plans for future.<br>
+<br>
+Hope you enjoy it!
 
-As you know that this is a personal blog website. It is also an experiment for what I am interested in and what I have learnt, which means it will not be strictly technical. The whole purpose of building such a blog is to find a place where I can share my understanding out.</br>
-</br>
-I also wish to receive any suggestion from you, guys. If someone can send an email and tell me "Hey, Linghao. XXX in your blog is wrong!" or "Your solution for XXX is stupid and naive, why not consider YYY?". That's exactly what I need! It's always nice to know more about techniques since I am still young enough.</br>
-</br>
-ANY SUGGESTION MATTERS.</br>
-</br>
-Many thanks!</br>
-</br>
-Linghao</br>
-2017.9.10
 
+//////
+
+
+### Welcome to my "blog"
+
+First of all, this website is supposed to be a "blog", but not only a typical blog due to my awkward writing and personal insistence. I am always looking for a way to express opinions and to share ideas easily. Definitely, writing is not a good choice for me. Instead, I would rather use graph and code with necessary explanations to do the same job. Therefore, those articles will probably be somewhat technical. (Artistic cells die out, sorry abou that.)<br>
+<br>
+On the other hand, I also wanna implement some services, which are mainly about web, data science and machine learning. Most of the articles will contain codes and hands-on tutorial, even though some of them may be simple. If you have any trouble in repeating or you have any idea and want to discuss with me, feel free to do that. Any sincere feedback matters in my opinion. If you find any issue, you can email me or leave a comment at its corresponding Github page. I will be able to check it out soon.<br>
+<br>
+As for future, actually it still not that clear to me either. The only thing I can imagine, for now, is to keep updating and refining this site. It will always be non-profit and free for all services available. Maybe it is not good enough now, but it is still running, so am I. I believe that I can make it better and I also have a reason to keep running. Trust the process, trust the potentiality.<br>
+<br>
+Fight on!<br>
+<br>
+Linghaol<br>
+2017.9.27
