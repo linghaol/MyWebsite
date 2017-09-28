@@ -18,12 +18,12 @@ def getWelcome():
 # blogpage
 @app.route('/blogpage')
 def getBlogpage():
-	itemList=None
+	itemList = None
 	return render_template('blogpage.html', itemList=json.load(open('./content/parsed/bloglist.json')))
 
 @app.route('/blogpage-cn')
 def getBlogpage_cn():
-	itemList=None
+	itemList = None
 	return render_template('blogpage-cn.html', itemList=json.load(open('./content/parsed/bloglist.json')))
 
 # service
@@ -32,7 +32,7 @@ def getService():
 	return render_template('service.html')
 
 @app.route('/service-cn')
-def getService():
+def getService_cn():
 	return render_template('service-cn.html')
 
 # verify user input id
