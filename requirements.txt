@@ -1,5 +1,4 @@
-gunicorn
-flask
-pymongo
-markdown2
-requests
+gunicorn==19.7.1
+flask==0.12.2
+markdown2=2.3.4
+requests==2.18.4
