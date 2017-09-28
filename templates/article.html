@@ -30,9 +30,10 @@
 	        	<p class="line"></p>
 				<p>Author: {{ article.author }}</p>
 				<p>Time: {{ article.time }}</p>
-				</br>
 	    	</header>
-			{{ article.detail|safe }}
+	    	<div class="article-body">
+	    		{{ article.detail|safe }}
+	    	</div>
 		</article>
 	</div>
 	<div class="bottom"></div>

@@ -242,6 +242,11 @@ header {
 	margin-bottom: 20px;
 }
 
+.article-body>a {
+	text-decoration: underline;
+	text-transform: none;
+}
+
 footer {
 	position: relative;
 	height: 35px;

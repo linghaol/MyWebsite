@@ -1,4 +1,6 @@
 '''
+author: linghaol
+
 My Blog Parser
 
 This parser use '//////' as marker to seperate keys, intro and detail of blogs.
@@ -24,7 +26,7 @@ class blogparser:
         
         # tags
         for tag in content[0].strip().split('\n'):
-            key, value = tag.split('=')
+            key, value = [ele.strip() for ele in tag.split('=')]
             self.attribute[key] = value
         
         # intro

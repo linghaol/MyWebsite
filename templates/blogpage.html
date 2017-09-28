@@ -32,7 +32,9 @@
 				<p>Author: {{ item.author }}</p>
 				<p>Time: {{ item.time }}</p>
 	    	</header>
-	    	{{ item.intro|safe }}
+	    	<div class="article-body">
+	    		{{ item.intro|safe }}
+	    	</div>
 	    	<footer>
 	        	<button class="more-button"><a href="/blog/{{ item.title }}">more</a></button>
 	    	</footer>

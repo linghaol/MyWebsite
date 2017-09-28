@@ -1,4 +1,6 @@
-# This is flask-based personal website
+
+# This is flask-based personal website.
+# author: linghaol
 
 from flask import Flask
 from flask import render_template
@@ -28,6 +30,10 @@ def getBlogpage_cn():
 @app.route('/service')
 def getService():
 	return render_template('service.html')
+
+@app.route('/service-cn')
+def getService():
+	return render_template('service-cn.html')
 
 # verify user input id
 @app.route('/verification', methods=['POST'])

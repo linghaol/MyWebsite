@@ -32,7 +32,9 @@
 				<p>作者: {{ item.author }}</p>
 				<p>日期: {{ item.time }}</p>
 	    	</header>
-	    	{{ item.intro|safe }}
+	    	<div class="article-body">
+	    		{{ item.intro|safe }}
+	    	</div>
 	    	<footer>
 	        	<button class="more-button"><a href="/blog/{{ item.title }}-cn">详细</a></button>
 	    	</footer>

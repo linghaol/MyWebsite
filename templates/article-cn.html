@@ -31,7 +31,9 @@
 				<p>作者: {{ article.author }}</p>
 				<p>日期: {{ article.time }}</p>
 	    	</header>
-			{{ article.detail|safe }}
+	    	<div class="article-body">
+	    		{{ article.detail|safe }}
+	    	</div>
 		</article>
 	</div>
 	<div class="bottom"></div>
