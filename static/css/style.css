@@ -15,6 +15,7 @@
 
 body {
 	font-family: articlefont, sans-serif;
+	margin: 0px;
 }
 
 a {
@@ -123,14 +124,15 @@ pre {
 
 /* top area */
 .top {
-	margin: 0px -8px 10px;
-	height: 200px;
+	margin: 0px -8px 0px;
+	height: 280px;
 }
 
 .top-content {
 	position: absolute; 
 	left: 50px; 
-	top: 35px;
+	top: 80px;
+	overflow: hidden;
 }
 
 .website-name {
@@ -154,13 +156,48 @@ pre {
 	margin-left: 30px;
 }
 
+#fork-me {
+	position: absolute; 
+	top: 0; 
+	right: 0; 
+	border: 0; 
+	z-index: 1;
+}
+
+.language-switch {
+	position: absolute;
+	top: 80px;
+	right: 150px;
+	width: 200px;
+	background-color: none;
+}
+
+#language a {
+	border-style: none;
+	color: white;
+	text-transform: initial;
+	border-radius: 20px;
+	padding: 5px 15px;
+	font-size: 15px;
+	background: linear-gradient(to right, rgba(0, 37, 218, 0.8), rgba(210, 0, 0, 0.8));
+}
+
+#language a:hover .language-switch {
+	transform: scale(3);
+}
+
+
 
 /* navigation */
 .main-nav {
 	background-color: #4e4e4e;
-	margin: 0px -8px 0px; 
-	height: 80px; 
+	position: fixed; 
+	height: 52px; 
 	text-align: center;
+	width: 100%;
+	top: 0px;
+	transition: 300ms;
+	opacity: 0.9;
 }
 
 .nav-content {
@@ -168,7 +205,7 @@ pre {
 	margin: 0px; 
 	padding: 0px; 
 	position: relative; 
-	top: 25px;
+	top: 10px;
 }
 
 .nav-button {
@@ -376,8 +413,12 @@ footer {
 	text-align: center;
 }
 
+.password-area p {
+	font-size: 22px;
+	color: white;
+}
 
-.password-area>p {
-	font-size: 25px;
+.password {
+	display: none;
 }
 

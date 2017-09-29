@@ -22,29 +22,34 @@
 						success: function(response){
 							var data = JSON.parse(response)
 							if (data.status == "success") {
-								$(".password-area").css("color", "yellow");
+								$("#password").css("color", "yellow");
 								$("#password").text("Password: " + data.password);
+								$("#password").slidedown("slow");
 							} 
 							else {
-								$(".password-area").css("color", "red");
+								$("#password").css("color", "red");
 								$("#password").text("Error: " + data.error_message);
+								$("#password").slidedown("slow");
 							}
 						}
 					});
 					return false;
 				}
 			});
-		});			
-	</script>
+		});
+</script>
 </head>
 <body>
 	<div class="top">
-		<a href="https://github.com/linghaol/MyWebsite"><img style="position: absolute; top: 0; right: 0; border: 0" src="../static/image/forkme.png" alt="Fork me on GitHub"></a>
+		<a id="fork-me" href="https://github.com/linghaol/MyWebsite"><img src="../static/image/forkme.png" alt="Fork me on GitHub"></a>
 		<div class="top-content">
 			<a class="website-name" href="/blogpage">LINGHAOL</a>
 			<span class="stick">|</span>
 			<span class="website-intro">Thinking makes sense.</span>
 		</div>
+		<div class="language-switch">
+			<span id="language"><a href="/service-cn">language switch</a></span>
+		</div>	
 	</div>
 	<nav class="main-nav">
 		<ul class="nav-content">
@@ -52,7 +57,7 @@
 			<li class="nav-button"><a href="/service">service</a></li>
 			<li class="nav-button"><a href="/stats">stats</a></li>
 			<li class="nav-button"><a href="/about">about</a></li>
-		</ul>
+		</ul>	
 	</nav>
 	<div class="main-body">
 		<div class="instruction">
@@ -85,7 +90,8 @@
 			</form>
 		</div>
 		<div class="password-area">
-			<p id="password"></p>	
+			<p>Response:</p>
+			<p id="password"></p>
 		</div>
 	</div>
 	<div class="bottom"></div>
