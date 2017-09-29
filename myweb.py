@@ -6,6 +6,7 @@ from flask import Flask
 from flask import render_template
 from flask import json
 from flask import request
+from flask import abort
 import requests
 
 app = Flask(__name__)
@@ -53,6 +54,21 @@ def getVerification():
 				return json.dumps({'status':'failed', 'error_message':'Not found in userlist. Please refresh and try again.'})
 		else:
 			return json.dumps({'status':'failed', 'error_message': 'reCAPTCHA not passed.'})
+	else:
+		abort(403)
+
+@app.route('/verification-cn', methods=['POST'])
+def getVerification_cn():
+	if request.method == 'POST':
+		user_id = request.form['user_id']
+		userlist = json.load(open('/shared_data/vpn/userlist.json', 'r')).values()
+		password = json.load(open('/shared_data/vpn/config.json', 'r'))['password']
+		if user_id in userlist:
+			return json.dumps({'status':'success', 'password':password})
+		else:
+			return json.dumps({'status':'failed', 'error_message':'Not found in userlist. Please refresh and try again.'})
+	else:
+		abort(403)
 
 # stats
 @app.route('/stats')

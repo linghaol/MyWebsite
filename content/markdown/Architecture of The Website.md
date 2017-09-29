@@ -44,63 +44,63 @@ Words end, graph and code time!<br>
 
 I drew a diagram to show the relations.<br>
 <br>
-![Architecture Diagram](../static/image/architecture-diagram.png)
+![Architecture Diagram](../static/image/architecture-diagram.png)<br>
 <br>
 As you can see, the whole site and its future development will based on Docker container system. To implement these containers, you need to have a physical server or a cloud instance, like AWS EC2. I created an instance with Ubuntu 14.04 on AWS. Then you need to install Docker CE for Ubuntu by following the [instruction](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/). Note that you only need to finish those codes before *"Install from a package"*. After that, you can continue.<br>
 <br>
 Get instance public IP or DNS, then log in using ssh.(I use Ubuntu VM. Also make sure you have uploaded your public key to AWS and allowed ssh traffic port 22 in security groups inbound.)<br>
-<br>
+
 ```
 ssh -i <private key path> ubuntu@<ip or DNS>
 git clone https://github.com/linghaol/linghaol.com.git
 cd ./linghaol.com
 ```
-<br>
+
 These steps above help you connect your instance, clone folder from my repository and enter the folder. There is an order to run the containers, otherwise issues will come out because of prerequisites.<br>
-<br>
+
 ```
 cd ./volume_container
 sudo docker build -t linghaol/volume .
 sudo docker run -v mydata:/shared_data linghaol/volume
 ```
-<br>
+
 These steps build a container and bind its directory "/shared_data" to a volume called "mydata". Actually this container is only used to create a volume and add files to it(See Dockerfile), which means you can definitely do it by hands and copy files to your volume. Running a container instead is more convenient. Don't worry about this container, after it complets the job, it will stop. You can remove it if you want. The volume is persistent, and that is an important reason to use it for data sharing.<br>
 <br>
 Since a volume has been created, you can run the following website container, NGINX container and VPN container.<br>
 Website container:<br>
-<br>
+
 ```
 cd ../
 sudo docker build -t linghaol/website .
 sudo docker run -d -v mydata:/shared_data --name website linghaol/website
 ```
-<br>
+
 A container called "website" has been created to run the website, but it cannot be visited by outside networks yet. The reason is that you only expose container port 8000, but don't bind the container port to any host port (Port 8000 is reserved for NGINX in Gunicorn). Thus, it can only be reached within Docker system. The next thing you need to do is to check the website's "Docker ip address". Docker has a route mechanism, which will assign a internal ip to every running container(Usually 172.17.0.2 is for the first running container, you had better check it out for sure and modify NGINX configuration.)<br>
-<br>
+
 ```
 sudo docker exec -it website bash
 hostname -i
 exit
 ```
-<br>
+
 Now you already have the internal ip address for website container. You need to modify *proxy_pass* variable in *nginx.vh.default.conf* by any editor you like and then save.(I like vim.) After that, you can run NGINX container.<br>
 NGINX container:
-<br>
+
 ```
 cd ./nginx_container
 sudo docker build -t linghaol/nginx .
 sudo docker run -d -p 80:80 --name nginx linghao/nginx
 ```
-<br>
+
 You run a container for NGINX, expose container port 80 and bind host port 80 (port for HTTP!) to its container port 80. Every request from host port 80 will be passed to NGINX and then passed to website container.<br>
 Finally, VPN container:
-<br>
+
 ```
 cd ../vpn_container
 sudo docker build -t linghaol/vpn .
 sudo docker run -d -v mydata:/shared_data -p 8388:8388 --name vpn linghaol/vpn
 ```
-<br>
+
 VPN container does't need to pass NGINX, so you bind host port 8388 to its container port 8388.<br>
 <br>
 You are done now! Every one can visit the website by ip address or domain name (if you have) as long as you modify the inbound rules in security groups for you instance on aws to allow HTTP (port 80) traffic.<br>
@@ -108,7 +108,7 @@ You are done now! Every one can visit the website by ip address or domain name (
 ### Service
 For now, VPN is the only avalible service. I promise this is the first one, but not the last one. Part of the logic has been shown in architecture diagram. Here I drew another flowchart to show the process of password authorization. It is so clear that I don't need to make any explanation.<br>
 <br>
-![Password Authorization Diagram](../static/image/password_authorization.png)
+![Password Authorization Diagram](../static/image/password_authorization.png)<br>
 <br>
 Alright, guys!<br>
 This is pretty much all I want to talk about.<br>
