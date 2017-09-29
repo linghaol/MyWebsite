@@ -346,11 +346,38 @@ footer {
 .bottom {
 	background: -webkit-linear-gradient(170deg, #4e4e4e, #185011);
 	background: linear-gradient(170deg, #4e4e4e, #185011);
-	margin: 0px -8px 0px; 
-	height: 200px;
+	margin: 0px;
+	height: 300px;
+	width: 100%;
 	margin-top: 50px;
+	color: #f1b94d;
 }
 
+.info {
+	position: relative;
+	top: 50px;
+	width: 70%;
+	height: 75%;
+	margin: auto;
+}
+
+.info a {
+	color: #f3e6e6;
+	text-decoration: underline; 
+	text-decoration-style: dotted;
+}
+
+.info-left {
+	float: left;
+	width: 400px;
+}
+
+.info-right {
+	float: right;
+	width: 300px;
+	margin-right: 50px;
+
+}
 
 /* Work-in-progress setting */
 .work-in-progress-title {
