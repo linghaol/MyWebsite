@@ -44,7 +44,7 @@ Words end, graph and code time!<br>
 
 I drew a diagram to show the relations.<br>
 <br>
-![Architecture Diagram](../static/image/architecture-diagram.svg)
+![Architecture Diagram](../static/image/architecture-diagram.png)
 <br>
 As you can see, the whole site and its future development will based on Docker container system. To implement these containers, you need to have a physical server or a cloud instance, like AWS EC2. I created an instance with Ubuntu 14.04 on AWS. Then you need to install Docker CE for Ubuntu by following the [instruction](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/). Note that you only need to finish those codes before *"Install from a package"*. After that, you can continue.<br>
 <br>
@@ -108,9 +108,10 @@ You are done now! Every one can visit the website by ip address or domain name (
 ### Service
 For now, VPN is the only avalible service. I promise this is the first one, but not the last one. Part of the logic has been shown in architecture diagram. Here I drew another flowchart to show the process of password authorization. It is so clear that I don't need to make any explanation.<br>
 <br>
-![Password Authorization Diagram](../static/image/password_authorization.svg)
+![Password Authorization Diagram](../static/image/password_authorization.png)
 <br>
 Alright, guys!<br>
 This is pretty much all I want to talk about.<br>
 Many thanks for your reading.<br>
-Hope you enjoy the time on my website! ^_^
+Hope you enjoy the time on my website! ^_^<br>
+<br>
