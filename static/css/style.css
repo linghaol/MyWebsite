@@ -284,7 +284,7 @@ header {
 .article-body a {
 	text-decoration: none;
 	text-transform: none;
-	color: blue;
+	color: #4c8423;
 }
 
 .article-body a:hover {
@@ -292,8 +292,6 @@ header {
 }
 
 .article-body img {
-	width: 100%;
-	height: 100%;
 	max-width: 100%;
 	max-height: 100%;
 }

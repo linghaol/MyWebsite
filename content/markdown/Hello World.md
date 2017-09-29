@@ -7,7 +7,7 @@ author = Linghaol
 //////
 
 
-### Hi!
+### Hi !
 
 I'm Linghaol, this is my first post, and always "Hello World"!<br>
 The website is designed, organized and managed by myself. In the first post, I will briefly introduce this site to you, write something about intentions and plans for future.<br>
