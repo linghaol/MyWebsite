@@ -353,7 +353,7 @@ footer {
 
 .info {
 	position: relative;
-	top: 50px;
+	top: 30px;
 	width: 70%;
 	height: 75%;
 	margin: auto;
@@ -368,12 +368,13 @@ footer {
 .info-left {
 	float: left;
 	width: 400px;
+	margin-left: 100px;
 }
 
 .info-right {
 	float: right;
-	width: 300px;
-	margin-right: 50px;
+	width: 25%;
+	margin-right: 100px;
 
 }
 
