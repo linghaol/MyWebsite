@@ -89,7 +89,7 @@ NGINX container:
 ```
 cd ./nginx_container
 sudo docker build -t linghaol/nginx .
-sudo docker run -d -p 80:80 --name nginx linghao/nginx
+sudo docker run -d -p 80:80 --name nginx linghaol/nginx
 ```
 
 You run a container for NGINX, expose container port 80 and bind host port 80 (port for HTTP!) to its container port 80. Every request from host port 80 will be passed to NGINX and then passed to website container.<br>
