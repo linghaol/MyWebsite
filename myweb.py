@@ -7,6 +7,8 @@ from flask import render_template
 from flask import json
 from flask import request
 from flask import abort
+from flask import redirect
+from flask import url_for
 import requests
 
 app = Flask(__name__)
@@ -73,20 +75,24 @@ def getVerification_cn():
 # stats
 @app.route('/stats')
 def getStats():
-	return render_template('error.html')
+	return redirect(url_for('getError'))
+	# render_template('stats.html')
 
 @app.route('/stats-cn')
 def getStats_cn():
-	return render_template('error-cn.html')
+	return redirect(url_for('getError_cn'))
+	# render_template('error-cn.html')
 
 # about me page
 @app.route('/about')
 def getAbout():
-	return render_template('error.html')
+	return redirect(url_for('getError'))
+	# render_template('error.html')
 
 @app.route('/about-cn')
 def getAbout_cn():
-	return render_template('error-cn.html')
+	return redirect(url_for('getError_cn'))
+	# render_template('error-cn.html')
 
 # render article
 @app.route('/blog/<article_title>')
@@ -98,6 +104,15 @@ def getArticle(article_title):
 def getArticle_cn(article_title):
 	return render_template('article-cn.html', 
 		article=json.load(open('./content/parsed/'+article_title+'.json')))
+
+@app.route('/error')
+def getError():
+	return render_template('error.html')
+
+@app.route('/error-cn')
+def getError_cn():
+	return render_template('error-cn.html')
+
 
 if __name__ == "__main__":
 	# bind app to port 8000
