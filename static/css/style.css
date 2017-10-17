@@ -124,7 +124,6 @@ pre {
 
 /* top area */
 .top {
-	margin: 0px -8px 0px;
 	height: 280px;
 }
 
@@ -367,14 +366,14 @@ footer {
 
 .info-left {
 	float: left;
-	width: 400px;
-	margin-left: 100px;
+	width: 380px;
+	margin-left: 50px;
 }
 
 .info-right {
 	float: right;
 	width: 25%;
-	margin-right: 100px;
+	margin-right: 50px;
 
 }
 
