@@ -24,12 +24,12 @@
 							if (data.status == "success") {
 								$("#password").css("color", "yellow");
 								$("#password").text("Password: " + data.password);
-								$("#password").slidedown("slow");
+								$("#password").slideDown("slow");
 							} 
 							else {
 								$("#password").css("color", "red");
 								$("#password").text("Error: " + data.error_message);
-								$("#password").slidedown("slow");
+								$("#password").slideDown("slow");
 							}
 						}
 					});

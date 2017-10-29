@@ -23,12 +23,12 @@
 							if (data.status == "success") {
 								$("#password").css("color", "yellow");
 								$("#password").text("密码: " + data.password);
-								$("#password").slidedown("slow");
+								$("#password").slideDown("slow");
 							} 
 							else {
 								$("#password").css("color", "red");
 								$("#password").text("错误: " + data.error_message);
-								$("#password").slidedown("slow");
+								$("#password").slideDown("slow");
 							}
 						}
 					});
