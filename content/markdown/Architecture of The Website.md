@@ -46,9 +46,9 @@ I drew a diagram to show the relations.<br>
 <br>
 ![Architecture Diagram](../static/image/architecture-diagram.png)<br>
 <br>
-As you can see, the whole site and its future development will based on Docker container system. To implement these containers, you need to have a physical server or a cloud instance, like AWS EC2. I created an instance with Ubuntu 14.04 on AWS. Then you need to install Docker CE for Ubuntu by following the [instruction](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/). Note that you only need to finish those codes before *"Install from a package"*. After that, you can continue.<br>
+As you can see, the whole site and its future development are based on Docker container system. To implement these containers, you need to have a physical server or a cloud instance, like AWS EC2. I created an instance with Ubuntu 14.04 on AWS. Then you need to install Docker CE for Ubuntu by following the [instruction](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/). Note that you only need to finish those codes before *"Install from a package"*. After that, you can move on.<br>
 <br>
-Get instance public IP or DNS, then log in using ssh.(I use Ubuntu VM. Also make sure you have uploaded your public key to AWS and allowed ssh traffic port 22 in security groups inbound.)<br>
+Get instance public IP or DNS, then login using ssh.(I use Ubuntu VM. Also make sure you have uploaded your public key to AWS and allowed ssh traffic port 22 in security groups inbound.)<br>
 
 ```
 ssh -i <private key path> ubuntu@<ip or DNS>

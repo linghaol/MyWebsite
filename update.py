@@ -12,8 +12,8 @@ from Blogparser import blogparser
 
 if __name__ == '__main__':
 	# update articles in content folder
-	mdlist = [mdname.split('.')[0] for mdname in os.listdir('./content/markdown')]
-	parsedlist = [psname.split('.')[0] for psname in os.listdir('./content/parsed')]
+	mdlist = [mdname.rsplit('.', maxsplit=1)[0] for mdname in os.listdir('./content/markdown')]
+	parsedlist = [psname.rsplit('.', maxsplit=1)[0] for psname in os.listdir('./content/parsed')]
 	for article in mdlist:
 		if article not in parsedlist:
 			parser = blogparser()

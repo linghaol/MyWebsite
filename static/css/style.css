@@ -29,7 +29,6 @@ h1 {
 	margin: 20px 0px 10px 0px;
 }
 
-
 p {
 	font-size: 20px;
 	margin: 10px 0px;
@@ -44,6 +43,13 @@ pre {
 	color: #ffff28;
 	padding: 10px;
 	overflow: auto;
+}
+
+em {
+	border-radius: 5px;
+	padding: 1px 6px;
+	background-color: #dedede;
+	color: black
 }
 
 
@@ -197,6 +203,7 @@ pre {
 	top: 0px;
 	transition: 300ms;
 	opacity: 0.9;
+	z-index: 9999;
 }
 
 .nav-content {
@@ -286,13 +293,19 @@ header {
 	color: #4c8423;
 }
 
+.article-body p {
+	line-height: 27px;
+}
+
 .article-body a:hover {
 	text-decoration: underline;
 }
 
 .article-body img {
-	max-width: 100%;
-	max-height: 100%;
+	display: block;
+	max-width: 80%;
+	max-height: 80%;
+	margin: auto;
 }
 
 .article-body ul>li {
@@ -446,4 +459,109 @@ footer {
 .password {
 	display: none;
 }
+
+
+/* chart style */
+.pie-area {
+	display: inline-block;
+	width: 400px;
+	height: 400px;
+	margin: 0px 40px 0px 80px;
+}
+
+.box-area {
+	display: inline-block;
+	width: 160px;
+	height: 260px;
+	margin: 20px 40px;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: black;
+	padding: 5px;
+	background-color: #ecc06e;
+}
+
+.right-panel {
+	display: inline-block;
+	width: 260px;
+	height: 350px;
+	position: relative;
+	bottom: 50px
+}
+
+.reset-button {
+	display: inline-block;
+	margin: auto;
+	width: 100%;
+	text-align: center;
+}
+
+.reset-button button {
+	width: 50%;
+	height: 35px;
+	background-color: #ffd358;
+	color: black;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	font-size: 18px;			
+}
+
+.reset-button button:hover {
+	box-shadow: 1px 3px 5px 1px lightgrey;
+}
+
+.chart-area rect {
+	cursor: pointer;
+}
+
+.record-area {
+	margin: 20px;
+	padding: 20px;
+	border: 2px solid lightgrey;
+	border-radius: 5px;
+}
+
+.record-area table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.record-area th, td {
+	padding: 8px;
+	text-align: left;
+}
+
+.record-area td {
+	font-size: 15px;
+}
+
+.record-area tr:nth-child(even) {
+	background-color: #ddd;
+}
+
+.download-area {
+	margin-top: 70px;
+	padding-left: 20px;
+}
+
+.download-area a {
+	display: inline-block;
+	font-size: 20px;
+	padding: 5px 10px;
+	background-color: #ffd358;
+	color: black;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	margin-right: 20px;			
+}
+
+.download-area a:hover {
+	box-shadow: 1px 3px 5px 1px lightgrey;
+	text-decoration: none;
+}
+
+
+
 

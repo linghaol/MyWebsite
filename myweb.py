@@ -113,6 +113,17 @@ def getError():
 def getError_cn():
 	return render_template('error-cn.html')
 
+# load data
+@app.route('/load/<dataname>')
+def getData(dataname):
+	data = json.load(open('./static/data/'+dataname+'.json'))
+	return json.dumps(data)
+
+# download data
+@app.route('/download/<filename>')
+def getFile(filename):
+	return redirect(url_for('static', filename='data/'+filename))
+
 
 if __name__ == "__main__":
 	# bind app to port 8000

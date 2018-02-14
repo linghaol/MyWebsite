@@ -27,7 +27,10 @@ class blogparser:
         # tags
         for tag in content[0].strip().split('\n'):
             key, value = [ele.strip() for ele in tag.split('=')]
-            self.attribute[key] = value
+            if key in ["script_header", "script_body"]:
+                self.attribute[key] = value.split("|")
+            else:
+                self.attribute[key] = value
         
         # intro
         self.attribute['intro'] = markdown(content[1].strip(), 
@@ -40,4 +43,4 @@ class blogparser:
         return self.attribute
 
 if __name__ == '__main__':
-    print('Note: Extension function for MyWebsite!')
+    print('Note: Extensive function for MyWebsite!')
