@@ -69,8 +69,10 @@ If you still don't know exactly how they work, try it by yourself. Humans gain k
 
 In my opinion, the total amount of money I spent doesn't mean a lot, but the percentage does. As you can see, about 70% of the money is paid for tuition, housing takes about 20%. The other part, including food, only takes 10%. This gives you much information, like if you are considering studying in the U.S. and cannot afford their high tuition, PhD program is probably a better choice since most PhD programs will waive tuition, the largest part of expense. You can also estimate more stuff before making the final decision. I wish my data and charts could give you some help, no matter in decision making or in view broadening.<br>
 <br>
+*Currency : USD($)*<br>
+<br>
 
-<div style="width: 100%">
+<div>
     <div class="chart-area">
         <div class="bar-area"></div>
         <div class="pie-area"></div>

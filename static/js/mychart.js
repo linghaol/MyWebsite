@@ -522,7 +522,6 @@ function updateChart(clickBox, time="all") {
 
 /* update table */
 function updateTable(clickBox, time='all') {
-	console.log(time);
 	if (!(time in record) && (time != "all")){
 		return updateTable(clickBox, "all");
 	}
