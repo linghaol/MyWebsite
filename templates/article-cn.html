@@ -5,6 +5,11 @@
 	<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
 	<title>{{ article.title }}</title>
 	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+	{% if "script_header" in article %}
+		{% for sc1 in article.script_header %}
+			<script src="{{ sc1 }}"></script>
+		{% endfor %}
+	{% endif %}
 </head>
 <body>
 	<div class="top">
@@ -51,5 +56,10 @@
 			<p>linghaol.com 2017</p>
 		</div>
 	</div>
+	{% if "script_body" in article %}
+		{% for sc2 in article.script_body %}
+			<script src="{{ sc2 }}"></script>
+		{% endfor %}
+	{% endif %}	
 </body>
 </html>

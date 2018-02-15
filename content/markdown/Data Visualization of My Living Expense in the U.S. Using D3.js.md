@@ -54,11 +54,11 @@ Now, I am gonna show you how to "play" with these charts. Let's do a Q&A.<br>
 Q: What parts can I "play"?<br>
 A: You can click bars, which will lead you to the data of a specific month. You can also select the types of purchase you want to see in charts.<br>
 <br>
-Q: After entering one month, how can I return?<br>
-A: Clicking any bar in this month will return you to all-month charts.<br>
+Q: After entering one month, how can I return to all-month?<br>
+A: *Clicking any bar in this month will return you to all-month charts.*<br>
 <br>
 Q: After selecting types in selection box, how can I see them reflected in charts?<br>
-A: Click any month bar and return to all-month charts. Because you need to click any bar to activate selections.<br>
+A: *Click any bar to activate selections, then return to all-month*.<br>
 <br>
 Q: What does the table show?<br>
 A: The table shows at most 15 records of all-month or any specific month, within the types you selected currently.<br>
@@ -70,7 +70,7 @@ If you still don't know exactly how they work, try it by yourself. Humans gain k
 In my opinion, the total amount of money I spent doesn't mean a lot, but the percentage does. As you can see, about 70% of the money is paid for tuition, housing takes about 20%. The other part, including food, only takes 10%. This gives you much information, like if you are considering studying in the U.S. and cannot afford their high tuition, PhD program is probably a better choice since most PhD programs will waive tuition, the largest part of expense. You can also estimate more stuff before making the final decision. I wish my data and charts could give you some help, no matter in decision making or in view broadening.<br>
 <br>
 
-<div style="width: 850px">
+<div style="width: 100%">
     <div class="chart-area">
         <div class="bar-area"></div>
         <div class="pie-area"></div>
