@@ -1,1 +1,1 @@
-{"local_address": "127.0.0.1", "local_port": 1080, "method": "aes-256-cfb", "password": "QSePT69pUO1ECcRT", "server": "0.0.0.0", "server_port": 8388, "timeout": 600}
+{"local_address": "127.0.0.1", "local_port": 1080, "method": "aes-256-cfb", "password": "initial_password", "server": "0.0.0.0", "server_port": 8388, "timeout": 600}
