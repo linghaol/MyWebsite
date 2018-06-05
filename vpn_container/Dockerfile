@@ -5,9 +5,3 @@ EXPOSE 8388
 RUN apt-get update && apt-get -y install vim
 
 CMD python password_update.py
-
-
-
-
-
-

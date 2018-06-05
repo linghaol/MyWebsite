@@ -35,14 +35,16 @@ p {
 }
 
 pre {
-	font-size: 20px;
+	font-size: 18px;
 	white-space: pre;
 	text-align: left;
-	background-color: #2a2b27;
+	background-color: #dfdfdf;
 	border-radius: 5px;
-	color: #ffff28;
+	color: #2a2a2a;
 	padding: 10px;
 	overflow: auto;
+	word-spacing: 3px;
+	border: solid 1.5px #b9b7b7;
 }
 
 em {
@@ -306,6 +308,7 @@ header {
 	max-width: 80%;
 	max-height: 80%;
 	margin: auto;
+	border-radius: 15px;
 }
 
 .article-body ul>li {
