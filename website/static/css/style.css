@@ -271,8 +271,7 @@ article {
 	border-width: 5px 0px 5px 0px; 
 	border-radius: 15px; 
 	border-color: #3d903d;
-	transition: 150ms ease-in;
-	animation:blogappear 1s;
+	animation:blog_appear 1s;
 	animation-timing-function:cubic-bezier(0.19, 0.74, 0.21, 1.23);
 }
 
@@ -280,7 +279,7 @@ article:hover {
 	box-shadow: 0px 0px 10px #6b6464;
 }
 
-@keyframes blogappear {
+@keyframes blog_appear {
 	from {
 		opacity: 0;
 		transform: scale(0.5);
@@ -291,7 +290,7 @@ article:hover {
 	}
 }
 
-@-webkit-keyframes blogappear {
+@-webkit-keyframes blog_appear {
 	from {
 		opacity: 0;
 		top: 10px;
@@ -495,27 +494,44 @@ footer {
 
 /************************  about page  ************************/
 
+
+
 #myphoto {
 	border-radius: 50%;
 	box-shadow: 0px 0px 20px grey;
 	margin-bottom: 10px;
+	opacity: 0;
+	animation:about_showup 0.5s;
+	animation-fill-mode: forwards;
 }
 
 .self-intro {
 ; 	margin: 20px auto;
 	border-left:solid 5px black;
 	border-radius: 5px;
-	background: linear-gradient(to right, orange, lightgrey);
 	text-align: left;
 	padding: 10px;
 	font-size: 20px;
+	opacity: 0;
+	animation:about_showup 0.5s;
+	animation-fill-mode: forwards;
 }
 
+@keyframes about_showup {
+	from {
+	}
+	to {
+		opacity: 1;
+	}
+}
 
-
-
-
-
+@-webkit-keyframes about_showup {
+	from {
+	}
+	to {
+		opacity: 1;
+	}
+}
 
 
 

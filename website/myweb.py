@@ -76,21 +76,21 @@ def getVerification_cn():
 @app.route('/stats')
 def getStats():
 	return redirect(url_for('getError'))
-	# render_template('stats.html')
+	# return render_template('stats.html')
 
 @app.route('/stats-cn')
 def getStats_cn():
 	return redirect(url_for('getError_cn'))
-	# render_template('stats-cn.html')
+	# return render_template('stats-cn.html')
 
-# about me page
+# about
 @app.route('/about')
 def getAbout():
-	render_template('about.html')
+	return render_template('about.html')
 
 @app.route('/about-cn')
 def getAbout_cn():
-	render_template('about-cn.html')
+	return render_template('about-cn.html')
 
 # render article
 @app.route('/blog/<article_title>')
