@@ -20,7 +20,7 @@ def updateJob():
 		f.write('password changed : ' +  datetime.now().strftime('%Y-%m-%d %H:%M:%S')+'\n')
 	os.system('ssserver -c /shared_data/vpn/config.json -d start')
 
-schedule.every().day.at('00:00').do(updateJob)
+schedule.every(5).day.at('00:00').do(updateJob)
 
 if __name__ == '__main__':
 	os.system('ssserver -c /shared_data/vpn/config.json -d start')
