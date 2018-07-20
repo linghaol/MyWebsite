@@ -501,7 +501,7 @@ footer {
 	box-shadow: 0px 0px 20px grey;
 	margin-bottom: 10px;
 	opacity: 0;
-	animation:about_showup 0.5s;
+	animation:about_showup 1s;
 	animation-fill-mode: forwards;
 }
 
@@ -513,7 +513,7 @@ footer {
 	padding: 10px;
 	font-size: 20px;
 	opacity: 0;
-	animation:about_showup 0.5s;
+	animation:about_showup 1s;
 	animation-fill-mode: forwards;
 }
 
