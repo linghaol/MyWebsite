@@ -81,18 +81,16 @@ def getStats():
 @app.route('/stats-cn')
 def getStats_cn():
 	return redirect(url_for('getError_cn'))
-	# render_template('error-cn.html')
+	# render_template('stats-cn.html')
 
 # about me page
 @app.route('/about')
 def getAbout():
-	return redirect(url_for('getError'))
-	# render_template('error.html')
+	render_template('about.html')
 
 @app.route('/about-cn')
 def getAbout_cn():
-	return redirect(url_for('getError_cn'))
-	# render_template('error-cn.html')
+	render_template('about-cn.html')
 
 # render article
 @app.route('/blog/<article_title>')

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+	<title>关于</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+</head>
+<body>
+	<div class="top">
+		<a id="fork-me" href="https://github.com/linghaol/MyWebsite"><img src="../static/image/forkme.png" alt="Fork me on GitHub"></a>
+		<div class="top-content">
+			<a class="website-name" href="/blogpage-cn">LINGHAOL</a>
+			<span class="stick">|</span>
+			<span class="website-intro">Thinking makes sense.</span>
+		</div>
+		<div class="language-switch">
+			<span id="language"><a href="/about">语言切换</a></span>
+		</div>
+	</div>
+	<nav class="main-nav">
+		<ul class="nav-content">
+			<li class="nav-button"><a href="/blogpage-cn">博客</a></li>
+			<li class="nav-button"><a href="/service-cn">服务</a></li>
+			<li class="nav-button"><a href="/stats-cn">统计</a></li>
+			<li class="nav-button"><a href="/about-cn">关于</a></li>
+		</ul>
+	</nav>
+	<div style="height: 500px">
+		<div style="text-align: center; width: 30%; margin: 0px auto;">
+			<img id="myphoto" src="../static/image/me.jpg">
+			<div class="self-intro" style="background: linear-gradient(to right, orange, lightgrey)">自驱工程师</div>
+			<div class="self-intro" style="background: linear-gradient(to right, lightblue, lightgrey)">Python程序员</div>
+			<div class="self-intro" style="background: linear-gradient(to right, lightgreen, lightgrey)">效率追逐者</div>
+			<div class="self-intro" style="background: linear-gradient(to right, pink, lightgrey)">玩家 (+1% 开发者)</div>
+		</div>
+	</div>
+	<div class="bottom">
+		<div class="info">
+			<div class="info-left">
+				<p style="font-size: 30px; margin: 20px">A self-designed, built and maintained blog website based on <a href="http://flask.pocoo.org/">Flask</a>.</p>
+				<p style="margin: 20px 20px 0px">Powererd by <a href="http://nginx.org/">NGINX</a>, <a href="http://gunicorn.org/">Gunicorn</a> and <a href="https://www.docker.com/">Docker</a></p>
+			</div>
+			<div class="info-right">
+				<p style="font-size: 25px; margin: 80px 20px 0px;">联系:</p>
+				<p style="margin: 20px 20px; color: #f3e6e6">linghaol@usc.edu</p>
+			</div>
+		</div>
+		<div style="position: relative; text-align: center; top: 30px; color: #f3e6e6">
+			<p>linghaol.com 2017</p>
+		</div>
+	</div>
+
+<!--
+<script type="text/javascript">
+	var preY = window.pageYOffset;
+
+	window.onscroll = function() {
+		var curY = window.pageYOffset;
+		if (preY > curY) {
+			document.getElementsByClassName("main-nav")[0].style.top = "0px";
+		} else {
+			document.getElementsByClassName("main-nav")[0].style.top = "-52px";
+		}
+		preY = curY;
+	}
+</script>
+-->
+
+</body>
+</html>

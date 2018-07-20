@@ -55,7 +55,11 @@ em {
 }
 
 
-/* Welcome Page */
+
+/************************  Welcome Page  ************************/
+
+
+
 #welcome-body {
 	background: url('../image/welcome-background.jpg') no-repeat center center fixed;
 	background-size: cover;
@@ -130,7 +134,12 @@ em {
 	font-size: 15px;
 }
 
-/* top area */
+
+
+/************************  top area  ************************/
+
+
+
 .top {
 	height: 280px;
 }
@@ -195,7 +204,10 @@ em {
 
 
 
-/* navigation */
+/************************  navigation  ************************/
+
+
+
 .main-nav {
 	background-color: #4e4e4e;
 	position: fixed; 
@@ -239,7 +251,12 @@ em {
 	color: black;
 }
 
-/* main body for article entry */
+
+
+/************************  article entry: main body  ************************/
+
+
+
 .main-body {
 	width: 70%;
 	margin: auto; 
@@ -343,7 +360,10 @@ footer {
 
 
 
-/* text in article */
+/************************  text in article  ************************/
+
+
+
 .article-title:hover {
 	color: #77a766;
 }
@@ -355,7 +375,11 @@ footer {
 }
 
 
-/* bottom */
+
+/************************  bottom  ************************/
+
+
+
 .bottom {
 	background: -webkit-linear-gradient(170deg, #4e4e4e, #185011);
 	background: linear-gradient(170deg, #4e4e4e, #185011);
@@ -406,7 +430,11 @@ footer {
 }
 
 
-/*  service page  */
+
+/************************  service page  ************************/
+
+
+
 .instruction {
 	width: 70%;
 	margin: 20px auto;
@@ -464,7 +492,37 @@ footer {
 }
 
 
-/* chart style */
+
+/************************  about page  ************************/
+
+#myphoto {
+	border-radius: 50%;
+	box-shadow: 0px 0px 20px grey;
+	margin-bottom: 10px;
+}
+
+.self-intro {
+; 	margin: 20px auto;
+	border-left:solid 5px black;
+	border-radius: 5px;
+	background: linear-gradient(to right, orange, lightgrey);
+	text-align: left;
+	padding: 10px;
+	font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+/************************  chart style  ************************/
+
+
+
 .pie-area {
 	display: inline-block;
 	width: 400px;

@@ -59,7 +59,7 @@ cd ./linghaol.com
 These steps above help you connect your instance, clone folder from my repository and enter the folder. There is an order to run the containers, otherwise issues will come out because of prerequisites.<br>
 
 ```
-cd ./volume_container
+cd ./volume
 sudo docker build -t linghaol/volume .
 sudo docker run -v mydata:/shared_data linghaol/volume
 ```
@@ -70,7 +70,7 @@ Since a volume has been created, you can run the following website container, NG
 Website container:<br>
 
 ```
-cd ../
+cd ../website
 sudo docker build -t linghaol/website .
 sudo docker run -d -v mydata:/shared_data --name website linghaol/website
 ```
@@ -87,7 +87,7 @@ Now you already have the internal ip address for website container. You need to 
 NGINX container:
 
 ```
-cd ./nginx_container
+cd ../nginx
 sudo docker build -t linghaol/nginx .
 sudo docker run -d -p 80:80 --name nginx linghaol/nginx
 ```
@@ -96,7 +96,7 @@ You run a container for NGINX, expose container port 80 and bind host port 80 (p
 Finally, VPN container:
 
 ```
-cd ../vpn_container
+cd ../vpn
 sudo docker build -t linghaol/vpn .
 sudo docker run -d -v mydata:/shared_data -p 8388:8388 --name vpn linghaol/vpn
 ```
