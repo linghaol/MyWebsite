@@ -1,6 +1,7 @@
 
 title = Data Visualization of My Living Expense in the U.S. Using D3.js
-time = 2018-2-14
+link = Data-Visualization-of-My-Living-Expense-in-the-U.S.-Using-D3.js
+date = 2018-2-14
 author = Linghaol
 script_header = https://d3js.org/d3.v4.min.js|https://d3js.org/d3-selection-multi.v1.min.js|https://code.jquery.com/jquery-3.3.1.min.js
 script_body = ../static/js/mychart.js
@@ -34,7 +35,7 @@ Recently, I am interested in interactive data visualization techniques, which be
 <br>
 Also, the dataset is available to download, only for non-commercial use.<br>
 <br>
-*Note: This project is ongoing. More data will be added later.*<br>
+*Note: Data updating ended on Apirl 30, 2018.*<br>
 
 ### Prerequisite
 

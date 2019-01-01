@@ -3,32 +3,43 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-	<title>错误</title>
-	<link rel="stylesheet" type="text/css" href="../static/css/style.css">	
+	<title>{{ article.title }}</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+	{% if "script_header" in article %}
+		{% for sc1 in article.script_header %}
+			<script src="{{ sc1 }}"></script>
+		{% endfor %}
+	{% endif %}
 </head>
 <body>
 	<div class="top">
 		<a id="fork-me" href="https://github.com/linghaol/MyWebsite"><img src="../static/image/forkme.png" alt="Fork me on GitHub"></a>
 		<div class="top-content">
-			<a class="website-name" href="/blogpage-cn">LINGHAOL</a>
+			<a class="website-name" href="/blogpage_cn">LinghaoL</a>
 			<span class="stick">|</span>
 			<span class="website-intro">Thinking makes sense.</span>
 		</div>
-		<div class="language-switch">
-			<span id="language"><a href="/error">语言切换</a></span>
-		</div>		
 	</div>
 	<nav class="main-nav">
 		<ul class="nav-content">
-			<li class="nav-button"><a href="/blogpage-cn">博客</a></li>
-			<li class="nav-button"><a href="/service-cn">服务</a></li>
-			<li class="nav-button"><a href="/stats-cn">统计</a></li>
-			<li class="nav-button"><a href="/about-cn">关于</a></li>
+			<li class="nav-button"><a href="/blogpage_cn">博客</a></li>
+			<li class="nav-button"><a href="/service_cn">服务</a></li>
+			<li class="nav-button"><a href="/stats_cn">统计</a></li>
+			<li class="nav-button"><a href="/about_cn">关于</a></li>
 		</ul>
 	</nav>
 	<div class="main-body">
-		<p class="work-in-progress-title">正在搭建中...</p>
-		<img class="not-found" src="../static/image/404.png">
+		<article>
+	    	<header>
+	        	<h1>{{ article.title }}</h1>
+	        	<p class="line"></p>
+				<p>作者: {{ article.author }}</p>
+				<p>日期: {{ article.date }}</p>
+	    	</header>
+	    	<div class="article-body">
+	    		{{ article.detail|safe }}
+	    	</div>
+		</article>
 	</div>
 	<div class="bottom">
 		<div class="info">
@@ -42,8 +53,13 @@
 			</div>
 		</div>
 		<div style="position: relative; text-align: center; top: 30px; color: #f3e6e6">
-			<p>linghaol.com 2017</p>
+			<p>linghaol.com 2017-2019</p>
 		</div>
 	</div>
+	{% if "script_body" in article %}
+		{% for sc2 in article.script_body %}
+			<script src="{{ sc2 }}"></script>
+		{% endfor %}
+	{% endif %}	
 </body>
 </html>

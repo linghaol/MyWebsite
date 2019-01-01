@@ -1,6 +1,7 @@
 
 title = Hello World
-time = 2017-9-10
+link = Hello-World
+date = 2017-9-10
 author = Linghaol
 
 

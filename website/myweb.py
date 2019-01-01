@@ -21,22 +21,20 @@ def getWelcome():
 # blogpage
 @app.route('/blogpage')
 def getBlogpage():
-	itemList = None
 	return render_template('blogpage.html', itemList=json.load(open('./content/parsed/bloglist.json')))
 
-@app.route('/blogpage-cn')
+@app.route('/blogpage_cn')
 def getBlogpage_cn():
-	itemList = None
-	return render_template('blogpage-cn.html', itemList=json.load(open('./content/parsed/bloglist.json')))
+	return render_template('blogpage_cn.html', itemList=json.load(open('./content/parsed/bloglist.json')))
 
 # service
 @app.route('/service')
 def getService():
 	return render_template('service.html')
 
-@app.route('/service-cn')
+@app.route('/service_cn')
 def getService_cn():
-	return render_template('service-cn.html')
+	return render_template('service_cn.html')
 
 # verify user input id
 @app.route('/verification', methods=['POST'])
@@ -59,7 +57,7 @@ def getVerification():
 	else:
 		abort(403)
 
-@app.route('/verification-cn', methods=['POST'])
+@app.route('/verification_cn', methods=['POST'])
 def getVerification_cn():
 	if request.method == 'POST':
 		user_id = request.form['user_id']
@@ -78,19 +76,19 @@ def getStats():
 	return redirect(url_for('getError'))
 	# return render_template('stats.html')
 
-@app.route('/stats-cn')
+@app.route('/stats_cn')
 def getStats_cn():
 	return redirect(url_for('getError_cn'))
-	# return render_template('stats-cn.html')
+	# return render_template('stats_cn.html')
 
 # about
 @app.route('/about')
 def getAbout():
 	return render_template('about.html')
 
-@app.route('/about-cn')
+@app.route('/about_cn')
 def getAbout_cn():
-	return render_template('about-cn.html')
+	return render_template('about_cn.html')
 
 # render article
 @app.route('/blog/<article_title>')
@@ -98,18 +96,18 @@ def getArticle(article_title):
 	return render_template('article.html', 
 		article=json.load(open('./content/parsed/'+article_title+'.json')))
 
-@app.route('/blog/<article_title>-cn')
+@app.route('/blog/<article_title>_cn')
 def getArticle_cn(article_title):
-	return render_template('article-cn.html', 
+	return render_template('article_cn.html', 
 		article=json.load(open('./content/parsed/'+article_title+'.json')))
 
 @app.route('/error')
 def getError():
 	return render_template('error.html')
 
-@app.route('/error-cn')
+@app.route('/error_cn')
 def getError_cn():
-	return render_template('error-cn.html')
+	return render_template('error_cn.html')
 
 # load data
 @app.route('/load/<dataname>')
