@@ -71,15 +71,15 @@ def getVerification_cn():
 		abort(403)
 
 # stats
-@app.route('/stats')
-def getStats():
+@app.route('/pynotes')
+def getPynotes():
 	return redirect(url_for('getError'))
-	# return render_template('stats.html')
+	# return render_template('pynotes.html')
 
-@app.route('/stats_cn')
-def getStats_cn():
+@app.route('/pynotes_cn')
+def getPynotes_cn():
 	return redirect(url_for('getError_cn'))
-	# return render_template('stats_cn.html')
+	# return render_template('pynotes_cn.html')
 
 # about
 @app.route('/about')

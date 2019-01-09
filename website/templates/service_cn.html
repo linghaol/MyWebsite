@@ -52,10 +52,10 @@
 	</div>
 	<nav class="main-nav">
 		<ul class="nav-content">
-			<li class="nav-button"><a href="/blogpage_cn">博客</a></li>
-			<li class="nav-button"><a href="/service_cn">服务</a></li>
-			<li class="nav-button"><a href="/stats_cn">统计</a></li>
-			<li class="nav-button"><a href="/about_cn">关于</a></li>
+			<li><a class="nav-button" href="/blogpage_cn">博客</a></li>
+			<li><a class="nav-button" href="/service_cn">服务</a></li>
+			<li><a class="nav-button" href="/pynotes_cn">Py笔记</a></li>
+			<li><a class="nav-button" href="/about_cn">关于</a></li>
 		</ul>
 	</nav>
 	<div class="main-body">
@@ -68,14 +68,14 @@
 				<li>该服务基于 Shadowsocks.</li>
 				<li>密码将每5天自动更新. 因此, 请确保在使用前登录该页面获取.</li>
 				<li>如果您希望使用该服务, 请与我联系.</li>
-				<li><strong style="font-size: 22px;">请不要将您的ID或者密码分享给任何人!</strong></li>
+				<li><strong style="font-size: 18px;">请不要将您的ID或者密码分享给任何人!</strong></li>
 			</ul>
 			<h4>步骤:</h4>
 			<ul>
 				<li>请先与我联系, 如果您还未获得许可.</li>
 				<li>下载 Shadowsocks 客户端. <a href="https://github.com/shadowsocks/shadowsocks-windows/releases/download/4.0.6/Shadowsocks-4.0.6.zip" style="text-decoration: underline; text-transform: none;">Windows</a> | <a href="https://github.com/shadowsocks/ShadowsocksX-NG/releases/download/v1.6.0/ShadowsocksX-NG.1.6.0.zip" style="text-decoration: underline; text-transform: none;">Mac OS X</a></li>
 				<li>解压, 安装, 运行.</li>
-				<li>在"服务器地址"内输入 <strong style="font-size: 22px;">vpn.linghaol.com</strong> 并保持其他不变.</li>
+				<li>在"服务器地址"内输入 <strong style="font-size: 18px;">vpn.linghaol.com</strong> 并保持其他不变.</li>
 				<li>请在下边输入您的ID并获取当时的密码.</li>
 				<li>确认后, 您应该能在右下角找到纸飞机图标,启动系统代理, 完成! (如有必要, 请切换到全局模式)</li>	
 			</ul>
@@ -84,7 +84,7 @@
 			<form>
 				<p>请输入您的ID:</p>
 				<input type="text" name="user_id" id="input-line">
-				<button class="submit-button">提交</button>
+				<button class="submit-button" style="margin-top: 0">提交</button>
 			</form>
 		</div>
 		<div class="password-area">
@@ -95,15 +95,15 @@
 	<div class="bottom">
 		<div class="info">
 			<div class="info-left">
-				<p style="font-size: 30px; margin: 20px">A self-designed, built and maintained blog website based on <a href="http://flask.pocoo.org/">Flask</a>.</p>
-				<p style="margin: 20px 20px 0px">Powererd by <a href="http://nginx.org/">NGINX</a>, <a href="http://gunicorn.org/">Gunicorn</a> and <a href="https://www.docker.com/">Docker</a></p>
+				<p id="info-left-text1">A self-designed, built and maintained blog website based on <a href="http://flask.pocoo.org/">Flask</a>.</p>
+				<p id="info-left-text2">Powererd by <a href="http://nginx.org/">NGINX</a>, <a href="http://gunicorn.org/">Gunicorn</a> and <a href="https://www.docker.com/">Docker</a></p>
 			</div>
 			<div class="info-right">
-				<p style="font-size: 25px; margin: 80px 20px 0px;">联系:</p>
-				<p style="margin: 20px 20px; color: #f3e6e6">linghaol@usc.edu</p>
+				<p id="info-right-text1">联系:</p>
+				<p id="info-right-text2">linghaol@usc.edu</p>
 			</div>
 		</div>
-		<div style="position: relative; text-align: center; top: 30px; color: #f3e6e6">
+		<div class="site-mark">
 			<p>linghaol.com 2017-2019</p>
 		</div>
 	</div>

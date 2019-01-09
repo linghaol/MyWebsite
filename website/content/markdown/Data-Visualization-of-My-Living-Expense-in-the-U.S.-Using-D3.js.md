@@ -81,7 +81,7 @@ In my opinion, the total amount of money I spent doesn't mean a lot, but the per
             <div class="reset-button">
                 <button>Reset Chart</button>
             </div>
-            <div class="box-area">              
+            <div class="box-area">
                 <div class="boxes" style="float: left;"></div>
             </div>              
         </div>

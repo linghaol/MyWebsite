@@ -13,10 +13,10 @@ var boxIsClicked = {
 	"tuition-box":true
 };
 
-var w_bar = $(".bar-area").width();
+var w_bar = 600;
 var h_bar = 350;
-var h_pie = $(".pie-area").width();
-var w_pie = h_pie;
+var h_pie = 320;
+var w_pie = 320;
 var outerR = w_pie/2;
 var innerR = w_pie/3;
 var color = d3.scaleOrdinal(d3.schemeCategory20);
