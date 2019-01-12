@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-	<title>PyNotes</title>
+	<title>Py笔记</title>
 	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>	
 </head>
 <body>
 	<div class="top">
@@ -18,14 +18,13 @@
 			<li>|</li>
 			<li><a class="lang-zh" href="/pynotes_cn">ZH</a></li>
 		</ul>
-		
 	</div>
 	<nav class="main-nav">
 		<ul class="nav-content">
-			<li><a class="nav-button" href="/blogpage">Blog</a></li>
-			<li><a class="nav-button" href="/service">Service</a></li>
-			<li><a class="nav-button" href="/pynotes">PyNotes</a></li>
-			<li><a class="nav-button" href="/about">About</a></li>
+			<li><a class="nav-button" href="/blogpage_cn">博客</a></li>
+			<li><a class="nav-button" href="/service_cn">服务</a></li>
+			<li><a class="nav-button" href="/pynotes_cn">Py笔记</a></li>
+			<li><a class="nav-button" href="/about_cn">关于</a></li>
 		</ul>
 	</nav>
 	<div class="jumper"></div>
@@ -33,15 +32,6 @@
 		<div class="pynotes-header">
 			<span id="python-symbol">P Y T H O N</span>
 			<p style="font-family: header_font, cursive; font-size: 20px">tricks, thoughts, comments and more</p>
-
-<!--		
-			<ul id="pieces">
-				<li>ideas</li>
-				<li>tricks</li>
-				<li>thoughts</li>
-				<li>comments</li>
-			</ul>
--->
 		</div>
 		
 	{% for note in noteList %}
@@ -70,7 +60,7 @@
 				<p id="info-left-text2">Powererd by <a href="http://nginx.org/">NGINX</a>, <a href="http://gunicorn.org/">Gunicorn</a> and <a href="https://www.docker.com/">Docker</a></p>
 			</div>
 			<div class="info-right">
-				<p id="info-right-text1">Contact:</p>
+				<p id="info-right-text1">联系:</p>
 				<ul id="info-right-text2">
 					<li>linghaol@usc.edu</li>
 					<li>linghao_li@163.com</li>

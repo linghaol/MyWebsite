@@ -51,7 +51,9 @@ As you can see, the whole site and its future development are based on Docker co
 <br>
 Get instance public IP or DNS, then login using ssh.(I use Ubuntu VM. Also make sure you have uploaded your public key to AWS and allowed ssh traffic port 22 in security groups inbound.)<br>
 
-```
+```python
+import redis
+a = list(range(10))
 ssh -i <private key path> ubuntu@<ip or DNS>
 git clone https://github.com/linghaol/linghaol.com.git
 cd ./linghaol.com

@@ -3,18 +3,21 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-	<title>{{ article.title }}</title>
+	<title>PyNotes</title>
 	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
-	{% if "script_header" in article %}
-		{% for sc1 in article.script_header %}
-			<script src="{{ sc1 }}"></script>
-		{% endfor %}
-	{% endif %}
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 	<div class="top">
 		<a id="fork-me" href="https://github.com/linghaol/MyWebsite"><img src="../static/image/forkme.png" alt="Fork me on GitHub"></a>
 		<a class="website-name" href="/blogpage">LINGHAOL</a>
+		<ul class="language-switch">
+			<li><a class="lang-en" href="/pynotes">EN</a></li>
+			<li>|</li>
+			<li><a class="lang-zh" href="/pynotes_cn">ZH</a></li>
+		</ul>
 	</div>
 	<nav class="main-nav">
 		<ul class="nav-content">
@@ -24,18 +27,31 @@
 			<li><a class="nav-button" href="/about">About</a></li>
 		</ul>
 	</nav>
+	<div class="jumper"></div>
 	<div class="main-body">
-		<article>
-	    	<header>
-	        	<h1>{{ article.title }}</h1>
-	        	<p class="line"></p>
-				<p>Author: {{ article.author }}</p>
-				<p>Date: {{ article.date }}</p>
-	    	</header>
-	    	<div class="article-body">
-	    		{{ article.detail|safe }}
-	    	</div>
-		</article>
+		<div class="pynotes-header">
+			<span id="python-symbol">P Y T H O N</span>
+			<p style="font-family: header_font, cursive; font-size: 20px">tricks, thoughts, comments and more</p>
+		</div>
+		
+	{% for note in noteList %}
+		<div class="note" id="note{{ note.index }}">
+			<div class="note-title">{{ note.title }}</div>
+			<div class="note-content-hidden" id="note-content">
+				 {{ note.content }}
+				 hahaha
+				 haha
+			</div>
+		</div>
+	{% endfor %}
+		<div class="note" id="note2">
+			<div class="note-title">note2</div>
+			<div class="note-content-hidden" id="note-content">
+				note2
+			</div>
+		</div>
+
+		<a class="show-more">show-more-button</a>
 	</div>
 	<div class="bottom">
 		<div class="info">
@@ -55,10 +71,6 @@
 			<p>linghaol.com 2017-2019</p>
 		</div>
 	</div>
-	{% if "script_body" in article %}
-		{% for sc2 in article.script_body %}
-			<script src="{{ sc2 }}"></script>
-		{% endfor %}
-	{% endif %}	
+<script src="../static/js/pynotes.js"></script>
 </body>
 </html>

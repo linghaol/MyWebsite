@@ -10,6 +10,7 @@ from flask import abort
 from flask import redirect
 from flask import url_for
 import requests
+import redis
 
 app = Flask(__name__)
 
@@ -119,6 +120,14 @@ def getData(dataname):
 @app.route('/download/<filename>')
 def getFile(filename):
 	return redirect(url_for('static', filename='data/'+filename))
+
+# load notes from redis
+@app.route('/load_notes/<num>', methods=['GET'])
+def getNotes(num):
+	db = redis.Redis(host="192.168.1.2", port=6379)
+	new_notes = db.lrange("notelist", int(num)+1, int(num)+3)
+	ended = 1 if len(new_notes) < 3 else 0
+	return json.dumps({"ended": ended, "notes": json.dumps([json.loads(_) for _ in new_notes])})
 
 
 if __name__ == "__main__":
