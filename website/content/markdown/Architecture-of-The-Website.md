@@ -12,8 +12,8 @@ author = Linghaol
 
 This article introduces the website architecture thoroughly with hands-on practice, which will cover the followings:
 
-- dependency and component
-- organizing principle
+- dependency and components
+- system logic
 - service
 
 In short, what it relies on, how it runs, what it provides.<br>
@@ -22,7 +22,7 @@ In short, what it relies on, how it runs, what it provides.<br>
 //////
 
 
-### Dependency and Component
+### Dependency and Components
 
 The website is built on a Python framework - [Flask](http://flask.pocoo.org/), which provides an "engine" with basic functions for web applications and flexibility to append many other wheels if needed. In Flask app, a HTML template can be controlled and customized by Flask, which is similar to a raw model, you can put what you want to show in it and return it to end users. The blogpage template in my website only has a skeleton with no content. Whenever a request comes, blog files stored locally will be loaded and added to blogpage template. As for blog update, all I need to do is writing blogs in Markdown, updating local blog files by running *update.py*, done!<br>
 (Some intermediate processes involve parsing blogs and transforming Markdown files to HTML files by *Blogparser.py*)<br>
@@ -41,7 +41,7 @@ I will explain how to build and use this containers below.<br>
 <br>
 Words end, graph and code time!<br>
 
-### Organizing Principle
+### System Logic
 
 I drew a diagram to show the relations.<br>
 <br>

@@ -4,6 +4,4 @@ EXPOSE 8000
 
 RUN python ./update.py
 
-RUN python ./notes.py
-
 CMD gunicorn -w 4 myweb:app --log-file - --bind 0.0.0.0:8000

@@ -67,6 +67,69 @@ function update_jumper_button(start, end) {
 	build_jumper_button(start, end)
 }
 
+function build_note_title_click() {
+	d3.selectAll(".note-title")
+	  .on("click", function(){
+	  		var element = d3.select(this.parentNode)
+	  						.select("#note-content")
+	  		if (element.attr("class") == "note-content-hidden") {
+	  			element.attr("class", "note-content-show")
+	  		} else {
+	  			element.attr("class", "note-content-hidden")
+	  		}
+	  		var handler = d3.select(".jumper-line")
+	  						.style("height", document.body.scrollHeight - 230)
+	  		handler.select(".jumper-line line")
+	  		  	   .attr("y2", document.body.scrollHeight - 230)
+		})	
+}
+
+function load_notes(){
+	var num_pre = $(".note-title").length
+
+	/* load notes */
+	$.ajax({
+		url: "/load_notes",
+		data: {"length": num_pre},
+		type: "POST",
+		success: function(response){
+			var data = JSON.parse(response)
+			d3.select(".main-body")
+			  .selectAll()
+			  .data(data.notes)
+			  .enter()
+			  .append("div")
+			  .attrs({
+			  		class: "note",
+			  		id: function(d, i){ return "note"+(num_pre+i+1) }
+			  })
+			  .each(function(d){
+			  		d3.select(this)
+					  .append("div")
+					  .attr("class", "note-title")
+					  .text(d.title)
+					d3.select(this)
+					  .append("div")
+			  		  .attrs({
+							class: "note-content-hidden",
+							id: "note-content"
+			  		  })
+			  		  .html(d.content)
+			  })
+			if (data.ended == 1){
+				d3.select(".show-more")
+				  .style("display", "none")
+			}
+		}
+	})
+
+	/* build note-title click */
+	build_note_title_click()
+
+	/* update jumper-button */
+	var num_aft = $(".note-title").length
+	update_jumper_button(num_pre, num_aft)	
+}
 
 /* main program starts here */
 
@@ -80,31 +143,12 @@ d3.select(".jumper")
   .append("svg")
   .attr("class", function(d){ return d; })
 
+load_notes()
+
 build_jumper_line()
 
 build_jumper_button(0, d3.selectAll(".note").size())
 
-d3.selectAll(".note-title")
-  .on("click", function(){
-  		var element = d3.select(this.parentNode)
-  						.select("#note-content")
-  		if (element.attr("class") == "note-content-hidden") {
-  			element.attr("class", "note-content-show")
-  		} else {
-  			element.attr("class", "note-content-hidden")
-  		}
-  		var handler = d3.select(".jumper-line")
-  						.style("height", document.body.scrollHeight - 230)
-  		handler.select(".jumper-line line")
-  		  	   .attr("y2", document.body.scrollHeight - 230)
-	})
+build_note_title_click()
 
-d3.select(".show-more")
-  .on("click", function(){
-  		var num_pre = 2
-		/* load more notes*/
-
-		/* update jumper-button */
-		var num_aft = d3.selectAll(".note").size()
-		update_jumper_button(num_pre, num_aft)
-	})
+$(".show-more").click(load_notes)

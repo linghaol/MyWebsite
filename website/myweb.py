@@ -74,13 +74,11 @@ def getVerification_cn():
 # stats
 @app.route('/pynotes')
 def getPynotes():
-	return redirect(url_for('getError'))
-	# return render_template('pynotes.html')
+	return render_template('pynotes.html')
 
 @app.route('/pynotes_cn')
 def getPynotes_cn():
-	return redirect(url_for('getError_cn'))
-	# return render_template('pynotes_cn.html')
+	return render_template('pynotes_cn.html')
 
 # about
 @app.route('/about')
@@ -122,13 +120,16 @@ def getFile(filename):
 	return redirect(url_for('static', filename='data/'+filename))
 
 # load notes from redis
-@app.route('/load_notes/<num>', methods=['GET'])
-def getNotes(num):
-	db = redis.Redis(host="192.168.1.2", port=6379)
-	new_notes = db.lrange("notelist", int(num)+1, int(num)+3)
-	ended = 1 if len(new_notes) < 3 else 0
-	return json.dumps({"ended": ended, "notes": json.dumps([json.loads(_) for _ in new_notes])})
-
+@app.route('/load_notes', methods=['POST'])
+def getNotes():
+	if request.method== "POST":
+		num = int(request.form["length"])
+		db = redis.Redis(host="192.168.1.2", port=6379)
+		# load 3 notes from redis each time
+		new_notes = db.lrange("notelist", num, num+2)
+		return json.dumps({"ended": 1 if len(new_notes) < 3 else 0, "notes": [json.loads(_) for _ in new_notes]})
+	else:
+		abort(403)
 
 if __name__ == "__main__":
 	# bind app to port 8000
