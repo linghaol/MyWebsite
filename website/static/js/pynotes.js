@@ -120,15 +120,14 @@ function load_notes(){
 				d3.select(".show-more")
 				  .style("display", "none")
 			}
+			/* build note-title click */
+			build_note_title_click()
+
+			/* update jumper-button */
+			var num_aft = $(".note-title").length
+			update_jumper_button(num_pre, num_aft)
 		}
 	})
-
-	/* build note-title click */
-	build_note_title_click()
-
-	/* update jumper-button */
-	var num_aft = $(".note-title").length
-	update_jumper_button(num_pre, num_aft)	
 }
 
 /* main program starts here */
@@ -143,12 +142,8 @@ d3.select(".jumper")
   .append("svg")
   .attr("class", function(d){ return d; })
 
-load_notes()
-
 build_jumper_line()
 
-build_jumper_button(0, d3.selectAll(".note").size())
-
-build_note_title_click()
+load_notes()
 
 $(".show-more").click(load_notes)

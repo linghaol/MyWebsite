@@ -523,7 +523,7 @@ footer {
 
 .note {
 	margin: 30px auto;
-	max-width: 600px;
+	max-width: 700px;
 }
 
 .note-title {
@@ -534,44 +534,19 @@ footer {
 	background-color: #fde1ab;
 	box-shadow: 0 1px 5px grey;
 	cursor: pointer;
-	/*
-	animation: note_title_showup 1s;
-	animation-fill-mode: forwards;
-	opacity: 0;
-	*/
 }
-/*
-@keyframes note_title_showup {
-	0% {transform: translate(20px, 10px);}
-	10% {opacity: 1; transform: translate(5px, 5px);}
-	100% {opacity: 1; transform: translate(0, 0);}
-}
-*/
 
 .note-title:hover {
 	background: #ffea69;
 }
 
 .note-content-hidden {
-	position: relative;
-	z-index: -1;
-	padding: 40px 20px 10px 20px;
-	border-radius: 0 0 10px 10px;
-	margin-top: -25px;
-	background-color: #e0dede;
-	max-height: 0;
-	opacity: 0;
+	display: none;
 }
 
 .note-content-show {
-	position: relative;
-	z-index: -1;
-	padding: 40px 20px 10px 20px;
+	padding: 10px 20px;
 	border-radius: 0 0 10px 10px;
-	margin-top: -25px;
-	background-color: #e0dede;
-	opacity: 1;
-	transition: max-height .3s linear, opacity .3s linear;
 }
 
 .show-more {

@@ -13,7 +13,7 @@ def note_parser(path):
 	note["title"] = file[0].strip()
 	note["content"] = markdown(file[1].strip(), extras=['fenced-code-blocks'])
 	return note
-                                            
+
 
 if __name__ == '__main__':
 	# redis ip: 192.168.1.2 in a user-defined docker network 192.168.1.1/8
