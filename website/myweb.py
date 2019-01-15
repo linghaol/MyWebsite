@@ -124,7 +124,7 @@ def getFile(filename):
 def getNotes():
 	if request.method== "POST":
 		num = int(request.form["length"])
-		db = redis.Redis(host="192.168.1.2", port=6379)
+		db = redis.Redis(host="100.0.0.2", port=6379)
 		# load 3 notes from redis each time
 		new_notes = db.lrange("notelist", num, num+2)
 		return json.dumps({"ended": 1 if len(new_notes) < 3 else 0, "notes": [json.loads(_) for _ in new_notes]})
