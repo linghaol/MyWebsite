@@ -183,7 +183,6 @@ em {
 	top: 8px;
 	right: 160px;
 	z-index: 2;
-	width: 90px;
 	border-radius: 10px;
 	padding: 1px 6px;
 	margin: 0;
@@ -364,7 +363,7 @@ footer {
 	background: -webkit-linear-gradient(170deg, #4e4e4e, #185011);
 	background: linear-gradient(170deg, #4e4e4e, #185011);
 	margin: 0;
-	height: 230px;
+	height: 280px;
 	color: #f1b94d;
 	position: relative;
 }
