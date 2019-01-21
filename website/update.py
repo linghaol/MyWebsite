@@ -21,7 +21,7 @@ if __name__ == '__main__':
 			listitem = {i: blog[i] for i in ['title', 'link', 'date', 'author', 'intro']}
 			bloglist = json.load(open('./content/parsed/bloglist.json', 'r'))
 			bloglist.append(listitem)
-			json.dump(sorted(bloglist, key=lambda x: datetime.strptime(x['date'].split()[-1], '%b %d, %Y'), reverse=True), 
+			json.dump(sorted(bloglist, key=lambda x: datetime.strptime(x['date'].split(maxsplit=2)[-1], '%b %d, %Y'), reverse=True), 
 					      open('./content/parsed/bloglist.json', 'w'))
 			json.dump(blog, open('./content/parsed/'+article+'.json', 'w'))
 			parsedlist = [psname.split('.')[0] for psname in os.listdir('./content/parsed')]
