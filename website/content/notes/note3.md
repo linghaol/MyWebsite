@@ -87,7 +87,7 @@ parallel()
 ```
 
 ```
-Output:
+# Output:
 sequential() started at 05:36:08, ended at 05:36:16.
 concurrent() started at 05:36:16, ended at 05:36:23.
 parallel() started at 05:36:23, ended at 05:36:27.
