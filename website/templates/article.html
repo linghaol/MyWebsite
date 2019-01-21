@@ -29,8 +29,8 @@
 	    	<header>
 	        	<h1>{{ article.title }}</h1>
 	        	<p class="line"></p>
-				<p>Author: {{ article.author }}</p>
-				<p>Date: {{ article.date }}</p>
+	        	<img class="article-author" src="{{ item.author }}">
+	        	<span class="article-date">{{ item.date }}</span>
 	    	</header>
 	    	<div class="article-body">
 	    		{{ article.detail|safe }}

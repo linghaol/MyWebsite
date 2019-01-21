@@ -1,8 +1,8 @@
 
 title = Hello World
 link = Hello-World
-date = 2017-9-10
-author = Linghaol
+date = Posted on Sep 10, 2017
+author = ../static/image/me.jpg
 
 
 //////

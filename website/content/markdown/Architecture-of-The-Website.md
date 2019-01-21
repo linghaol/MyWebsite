@@ -1,8 +1,8 @@
 
 title = Architecture of The Website
 link = Architecture-of-The-Website
-date = 2017-9-27
-author = Linghaol
+date = Posted on Sep 27, 2017
+author = ../static/image/me.jpg
 
 
 //////

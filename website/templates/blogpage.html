@@ -30,8 +30,8 @@
 	    	<header>
 	        	<a href="/blog/{{ item.link }}"><h1 class="article-title">{{ item.title }}</h1></a>
 	        	<p class="line"></p>
-				<p>Author: {{ item.author }}</p>
-				<p>Time: {{ item.date }}</p>
+	        	<img class="article-author" src="{{ item.author }}">
+	        	<span class="article-date">{{ item.date }}</span>
 	    	</header>
 	    	<div class="article-body">
 	    		{{ item.intro|safe }}

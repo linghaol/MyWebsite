@@ -30,8 +30,8 @@
 	    	<header>
 	        	<a href="/blog/{{ item.link }}_cn"><h1 class="article-title">{{ item.title }}</h1></a>
 	        	<p class="line"></p>
-				<p>作者: {{ item.author }}</p>
-				<p>日期: {{ item.date }}</p>
+	        	<img class="article-author" src="{{ item.author }}">
+	        	<span class="article-date">{{ item.date }}</span>
 	    	</header>
 	    	<div class="article-body">
 	    		{{ item.intro|safe }}

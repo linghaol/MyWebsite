@@ -294,6 +294,17 @@ header {
 	margin-bottom: 16px;
 }
 
+.article-author {
+    border-radius: 50%;
+    max-width: 50px;
+    margin: 0px 30px 0px 10px;
+}
+
+.article-date {
+	color: grey;
+	font-size: 14px;
+}
+
 .article-body a {
 	text-decoration: none;
 	text-transform: none;
