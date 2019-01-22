@@ -27,7 +27,7 @@ Assuming that "cook" and "finish" don't take any step, then sequential execution
 
 ### the code
 
-Due to GIL(global interpreter lock), only one thread can executes Python bytecode at a time. Python threads are not parallel by default, but they can still be used in concurrent case. Instead, spawning processes is one way to achieve parallelism in Python.<br>
+Due to GIL(global interpreter lock), only one thread can execute Python bytecode at a time. Python threads are not parallel by default, but they can still be used in concurrent case. Instead, spawning processes is one way to achieve parallelism in Python.<br>
 <br>
 Here are some useful stardard libraries:<br>
 concurrent: *threading*, *concurrent.futures.ThreadPoolExecutor*, *asyncio*<br>
