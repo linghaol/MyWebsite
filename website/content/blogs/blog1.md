@@ -1,6 +1,6 @@
 
 title = Hello World
-link = Hello-World
+label = blog1
 date = Posted on Sep 10, 2017
 author = ../static/image/me.jpg
 

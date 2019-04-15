@@ -33,7 +33,7 @@ Here are some useful stardard libraries:<br>
 concurrent: *threading*, *concurrent.futures.ThreadPoolExecutor*, *asyncio*<br>
 parallel: *multiprocessing*, *concurrent.futures.ProcessPoolExecutor*<br>
 <br>
-In the example below, concurrent execution is implemented with *asyncio*, and parallel execution is implemented with *concurrent.futures.ProcessPoolExecutor*. "time.sleep()/asynio.sleep()" is idel part, while "math.factorial()" is busy part.<br>
+In the example below, concurrent execution is implemented with *asyncio*, and parallel execution is implemented with *concurrent.futures.ProcessPoolExecutor*. "time.sleep()/asynio.sleep()" is idle part, while "math.factorial()" is busy part.<br>
 All code has been tested in *Python 3.7.1*.<br>
 Note: Execution time may vary on different machines.<br>
 

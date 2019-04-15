@@ -10,7 +10,7 @@ Part II from *Fluent Python*. Decorator is an interesting and useful callable de
 In a case that we wanna know how long our function takes to run, instead of using "timeit" module, it can be done simply by recording the starting and ending time, then doing subtraction. Here is an example.<br>
 All code has been tested in *Python 3.7.1*.<br>
 
-### example1
+### example
 
 Example1 defines a decorator to time appending 1,000,000 numbers to a list.<br>
 Note: Execution time may vary on different machines.<br>
@@ -41,34 +41,39 @@ append_number()
 # Total time: 0.14s
 ```
 
-### example2 with enhancements
+### a better decorator
 
-After running the example above, you may be wondering: Can I time the function for x rounds and each time the list appends y numbers? Of course! 
-The question is abstracted as how to pass parameters to decorators. Example2 will give you answer.<br>
+The decorator above works, but it's not "general" in terms of losing function metadata, decorator parameters and parsed arguments. To solve these problems, @wraps decorator from *functools* library, \* and \*\* argument are required.<br>
+<br>
+@wraps preserves the metadata of function append_number(), rather than the wrapper timeit()'s. \*args stores arguments in a tuple called "args", while \*\*kwargs stores keyword arguments in a dict called "kwargs".<br>
 
 ```
 from time import time
+from functools import wraps
 
-def decor(x=1):
-	# at least run 1 round
-	def timeit(func):
-		def inner(y=0):
+def decor(rounds=1):
+	# at least 1 round
+	def inner(func):
+		@wraps(func)
+		def timeit(*args, **kwargs):
 			t1 = time()
-			for i in range(x):
-				func(y)
+			for i in range(rounds):
+				func(*args, **kwargs)
 			t2 = time()
 			print('Total time: %.2fs' % (t2-t1))
-		return inner
-	return timeit
+		return timeit
+	return inner
 
-# run 10 rounds with appending 1,000,000 numbers each time
+# 10 rounds, appending 1,000,000 numbers to a list in each round
 @decor(10)
-def append_number(y):
+def append_number(n):
 	nums = []
-	for i in range(y):
+	for i in range(n):
 		nums.append(i)
 
 append_number(1000000)
+
+# equivalent to "decor(10)(append_number)(1000000)"
 
 # Output:
 # Total time: 1.15s

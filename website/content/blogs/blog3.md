@@ -1,6 +1,6 @@
 
 title = Data Visualization of My Living Expense in the U.S. Using D3.js
-link = Data-Visualization-of-My-Living-Expense-in-the-U.S.-Using-D3.js
+label = blog3
 date = Posted on Feb 14, 2018
 author = ../static/image/me.jpg
 script_header = https://d3js.org/d3.v4.min.js|https://d3js.org/d3-selection-multi.v1.min.js|https://code.jquery.com/jquery-3.3.1.min.js

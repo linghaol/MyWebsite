@@ -40,6 +40,8 @@ def getService_cn():
 # verify user input id
 @app.route('/verification', methods=['POST'])
 def getVerification():
+	# Note: if methods defined above, not need to check method
+	# 405 response will be returned automatically, Modify code!!!
 	if request.method == 'POST':
 		user_id = request.form['user_id']
 		recaptcha = request.form['g-recaptcha-response']
@@ -47,29 +49,29 @@ def getVerification():
 			data = {'secret':'6LetGDEUAAAAAGr2WSKC4fyuXG5J85pfdJjSzTcf', 
 			'response':recaptcha}).json()
 		if check['success']:
-			userlist = json.load(open('/shared_data/vpn/userlist.json', 'r')).values()
-			password = json.load(open('/shared_data/vpn/config.json', 'r'))['password']
-			if user_id in userlist:
+			db = redis.Redis(host="100.0.0.2", port=6379)
+			if db.sismember('userlist', user_id):
+				password = db.get('vpn_password')
 				return json.dumps({'status':'success', 'password':password})
 			else:
 				return json.dumps({'status':'failed', 'error_message':'Not found in userlist. Please refresh and try again.'})
 		else:
 			return json.dumps({'status':'failed', 'error_message': 'reCAPTCHA not passed.'})
 	else:
-		abort(403)
+		abort(405)
 
 @app.route('/verification_cn', methods=['POST'])
 def getVerification_cn():
 	if request.method == 'POST':
 		user_id = request.form['user_id']
-		userlist = json.load(open('/shared_data/vpn/userlist.json', 'r')).values()
-		password = json.load(open('/shared_data/vpn/config.json', 'r'))['password']
-		if user_id in userlist:
+		db = redis.Redis(host="100.0.0.2", port=6379)
+		if db.sismember('userlist', user_id):
+			password = db.get('vpn_password')
 			return json.dumps({'status':'success', 'password':password})
 		else:
 			return json.dumps({'status':'failed', 'error_message':'Not found in userlist. Please refresh and try again.'})
 	else:
-		abort(403)
+		abort(405)
 
 # stats
 @app.route('/pynotes')
@@ -90,15 +92,15 @@ def getAbout_cn():
 	return render_template('about_cn.html')
 
 # render article
-@app.route('/blog/<article_title>')
-def getArticle(article_title):
+@app.route('/blog/<article_label>')
+def getArticle(article_label):
 	return render_template('article.html', 
-		article=json.load(open('./content/parsed/'+article_title+'.json')))
+		article=json.load(open('./content/parsed/'+article_label+'.json')))
 
-@app.route('/blog/<article_title>_cn')
-def getArticle_cn(article_title):
+@app.route('/blog/<article_label>_cn')
+def getArticle_cn(article_label):
 	return render_template('article_cn.html', 
-		article=json.load(open('./content/parsed/'+article_title+'.json')))
+		article=json.load(open('./content/parsed/'+article_label+'.json')))
 
 @app.route('/error')
 def getError():
@@ -129,7 +131,7 @@ def getNotes():
 		new_notes = db.lrange("notelist", num, num+2)
 		return json.dumps({"ended": 1 if len(new_notes) < 3 else 0, "notes": [json.loads(_) for _ in new_notes]})
 	else:
-		abort(403)
+		abort(405)
 
 if __name__ == "__main__":
 	# bind app to port 8000
