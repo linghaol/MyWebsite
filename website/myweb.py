@@ -22,11 +22,11 @@ def getWelcome():
 # blogpage
 @app.route('/blogpage')
 def getBlogpage():
-	return render_template('blogpage.html', itemList=json.load(open('./content/parsed/bloglist.json')))
+	return render_template('blogpage.html', itemList=json.load(open('./content/parsed_blogs/bloglist.json')))
 
 @app.route('/blogpage_cn')
 def getBlogpage_cn():
-	return render_template('blogpage_cn.html', itemList=json.load(open('./content/parsed/bloglist.json')))
+	return render_template('blogpage_cn.html', itemList=json.load(open('./content/parsed_blogs/bloglist.json')))
 
 # service
 @app.route('/service')
@@ -95,12 +95,12 @@ def getAbout_cn():
 @app.route('/blog/<article_label>')
 def getArticle(article_label):
 	return render_template('article.html', 
-		article=json.load(open('./content/parsed/'+article_label+'.json')))
+		article=json.load(open('./content/parsed_blogs/'+article_label+'.json')))
 
 @app.route('/blog/<article_label>_cn')
 def getArticle_cn(article_label):
 	return render_template('article_cn.html', 
-		article=json.load(open('./content/parsed/'+article_label+'.json')))
+		article=json.load(open('./content/parsed_blogs/'+article_label+'.json')))
 
 @app.route('/error')
 def getError():
