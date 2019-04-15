@@ -26,7 +26,7 @@ if __name__ == '__main__':
 			db.sadd("notename", name)
 			db.rpush("notelist", json.dumps(attr))
 		else:
-			index = int(name[-1]-1)
+			index = int(name[-1])-1
 			db.lset("notelist", index, json.dumps(attr))
 	
 
