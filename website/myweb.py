@@ -49,7 +49,7 @@ def getVerification():
 			data = {'secret':'6LetGDEUAAAAAGr2WSKC4fyuXG5J85pfdJjSzTcf', 
 			'response':recaptcha}).json()
 		if check['success']:
-			db = redis.Redis(host="100.0.0.2", port=6379)
+			db = redis.StrictRedis("100.0.0.2", 6379, charset="utf-8", decode_responses=True)
 			if db.sismember('userlist', user_id):
 				password = db.get('vpn_password')
 				return json.dumps({'status':'success', 'password':password})
@@ -64,7 +64,7 @@ def getVerification():
 def getVerification_cn():
 	if request.method == 'POST':
 		user_id = request.form['user_id']
-		db = redis.Redis(host="100.0.0.2", port=6379)
+		db = redis.StrictRedis("100.0.0.2", 6379, charset="utf-8", decode_responses=True)
 		if db.sismember('userlist', user_id):
 			password = db.get('vpn_password')
 			return json.dumps({'status':'success', 'password':password})

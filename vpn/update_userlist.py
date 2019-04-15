@@ -6,7 +6,9 @@ def update_ul():
 	if text != '':
 		userlist = text.split('\n')
 		db = redis.Redis(host="100.0.0.2", port=6379)
-		db.sadd('userlist', *userlist)
+		db.sadd('temp', *userlist)
+		db.sinterstore('userlist', 'userlist', 'temp')
+		db.delete('temp')
 
 if __name__ == '__main__':
 	update_ul()
