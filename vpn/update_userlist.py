@@ -1,7 +1,7 @@
 import redis
 
 def update_ul():
-	with open('./data/userlist.txt', r) as f:
+	with open('./data/userlist.txt', 'r') as f:
 		text = f.read().strip()
 		if text != '':
 			userlist = text.split('\n')
