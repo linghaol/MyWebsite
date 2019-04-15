@@ -67,7 +67,7 @@ First of all, a docker network is needed to keep containers connected. Here I cr
 
 ```
 cd ./redis
-run pull_redis_image
+bash pull_redis_image
 sudo docker run -d --name redis --network mynet --ip 100.0.0.2 redis
 ```
 
